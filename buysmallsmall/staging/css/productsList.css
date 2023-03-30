@@ -1,0 +1,140 @@
+*{
+    /* overflow-x: hidden; */
+
+}
+.grid-box{
+    width: 90%;
+    margin: 50px auto;
+    display:grid;
+    gap:2rem;
+    /* grid-template-columns: 1fr; */
+
+}
+
+
+
+.card{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height:fit-content;
+    border-radius:10px;
+    margin: 5px;
+    text-decoration: none;
+    color: #000;
+
+}
+.top-section, .bottom-section{
+    padding:20px;
+    height:50%;
+}
+.top-section{
+    /* background-image:url("/public/img/Rectangle1.png"); */
+    background-size:cover;
+    background-repeat:no-repeat;
+    height: 300px;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+
+}
+.bottom-section{
+
+}
+.badge{
+    background: #64318A;
+    color: #fff;
+    padding:20px;
+    display: inline-block;
+}
+
+
+
+.bottom-section p{
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+
+}
+.bottom-section >h3{
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    padding:10px 0;
+
+}
+.bottom-section ul{
+    display: flex;
+    gap:1rem;
+    padding:5px 0;
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+}
+.bottom-section ul{
+    white-space:nowrap;
+}
+.key-values{
+    padding:30px 0;
+
+}
+.key-values >div{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.key-values div span{
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color:grey
+}
+.key-values h3{
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    color: #282828;
+}
+
+@media screen and (min-width:515px){
+    .grid-box{
+        grid-template-columns: 1fr 1fr;
+        gap:1rem;
+        width: 100%;
+        padding: 10px;
+    }
+    .card{
+        margin: 20px 1px;
+
+    }
+}
+@media screen and (min-width:1024px){
+    .grid-box{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width:1280px){
+    .grid-box{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap:1.5rem;
+        width: 98%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

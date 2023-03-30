@@ -1,0 +1,377 @@
+.stats-wrapper{
+    width:80%;
+    margin:50px auto;
+}
+.main-numbers-container{
+    width:100%;
+    padding:40px;
+    border-radius:25px;
+    background:#64318A;
+}
+.numbers-head{
+    width:100%;
+    margin-bottom:50px;
+    color:#FFF;
+    font-size:35px;
+    font-family:'Cera Medium';
+    text-align:center;
+}
+.stats-pool-buy{
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 60px;
+    text-align: center;
+    color: #282828;
+}
+.stats-text{
+    display:block;
+    width:100%;
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #282828;
+    /* width:80%; */
+}
+.stats-paper-wrapper{
+    /*padding:20px;*/
+    background:#64318A;
+    border-radius:25px;
+    margin-top:30px;
+    display:flex;
+    flex-direction:row;
+}
+.numbers-container{
+    /*padding:20px;*/
+    display:flex;
+    flex-direction:row;
+}
+.number-item{
+    width:25%;
+    border-right:1px solid #FFFFFF;
+    padding: 0 15px;
+}
+.number-item:last-child{
+    border-right:0;
+}
+.number-item .number{
+    display:block;
+    font-size:46px;
+    color:#FFF;
+    font-family:'Cera Bold';
+    text-align: center;
+    position:relative;
+}
+.number-item .number span{
+    display:inline-block;
+    line-height:20px;
+    font-size:20px;
+    padding-bottom:25px;
+}
+.number-item .number-reason{
+    display:block;
+    font-size:14px;
+    color:#FFF;
+    font-family:'Cera Pro';
+    text-align: center;
+}
+.stats-grid-box{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:3rem;
+}
+.stats-paper{
+    width:50%;
+    padding:40px;
+    color:#FFF
+}
+.stats-percentage-count{
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    color: #FFFFFF;
+}
+.stats-count-statement{
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.stat-td{
+    padding:10px;
+}
+.stat-sub-head{
+    display:block;
+    margin-bottom:5px;
+    font-size:18px;
+    font-family:'Cera Pro';
+    font-weight:700;
+}
+.stat-note{
+    display:block;
+    margin-bottom:0;
+    font-family:'Cera Pro';
+    font-weight:normal;
+    line-height:25px;
+}
+.stats-lets-go{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap:0.5rem;
+    text-decoration: none;
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #FFFFFF;
+    background: #64318A;
+    border-radius: 4px;
+    padding:18px 80px;
+}
+.home-prop-wrapper{
+    width:90%;
+    display:block;
+    margin:auto;
+    margin-bottom:50px;
+}
+.feat-prop-wrapper, .prop-option-head, .prop-option-top{
+    width:100%;
+    display:inline-block;
+}
+.feat-prop-wrapper{
+    margin-bottom:100px;
+}
+.prop-option-top .prop-class{
+    display:inline-block;
+    font-family:'Cera Medium';
+    color:#282828;
+    font-size:30px;
+    line-height:48px;
+}
+.prop-option-top .all-prop-btn{
+    display:block;
+    width:180px;
+    line-height:48px;
+    text-align:center;
+    float:right;
+    background:#64318A;
+}
+.prop-option-top .all-prop-btn a{
+    display:block;
+    text-decoration:none;
+    font-family:'Cera Pro';
+    color:#FFF;
+    font-size:16px;
+}
+.prop-option-below{
+    width:100%;
+    font-family:'Cera Pro';
+    color:#282828;
+    font-size:16px;
+    line-height:48px;
+}
+.home-properties-container{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+.home-props-with-banner{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+.home-props-with-banner .banner-item{
+    width:25%;
+    margin-right:10px;
+}
+.home-props-with-banner .the-prop-items{
+    width:75%;
+    margin-right:0;
+}
+#finance-line{
+    display:block;
+    font-size:30px;
+    color:#282828;
+    line-height:40px;
+    font-family:'Cera Bold';
+    text-align:left;
+    margin-bottom:20px;
+}
+#finance-btn{
+    width:100%;
+    line-height:40px;
+    background:#64318A;
+    color:#FFF;
+    text-align:center;
+}
+#finance-btn a{
+    text-decoration:none;
+    color:#FFF;
+    font-family:'Cera Pro';
+}
+@media(max-width:1200px){
+    .stats-wrapper{
+        width:90%;
+        margin:30px auto;
+    }
+    .stats-paper-wrapper{
+        /*padding:20px;*/
+        background:#64318A;
+        border-radius:25px;
+        margin-top:30px;
+        display:flex;
+        flex-direction:row;
+    }
+    .stats-paper{
+        padding:30px;
+    }
+    .stat-td{
+        padding:5px;
+    }
+    .stat-sub-head{
+        font-size:16px;
+    }
+    .stat-note{
+        font-size:14px;
+        line-height:20px;
+    }
+    .stats-count-statement{
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom:20px;
+    }
+    .number-item .number{
+        font-size:30px;
+    }
+    .number-item .number-reason{
+        font-size:14px;
+    }
+}
+@media(max-width:900px){
+    .stats-wrapper{
+        width:90%;
+        margin:30px auto;
+    }
+    .stats-paper-wrapper{
+        /*padding:20px;*/
+        background:transparent;
+        margin-top:30px;
+        flex-direction:column;
+    }
+    .stats-paper{
+        width:100%;
+        padding:30px;
+        border-radius:15px;
+        margin-bottom:20px;
+        background:#64318A;
+    }
+    .stats-paper:nth-child(2){
+        margin-bottom:0;
+    }
+    .stat-td{
+        padding:5px;
+    }
+    .stat-sub-head{
+        font-size:16px;
+    }
+    .stat-note{
+        font-size:14px;
+        line-height:20px;
+    }
+    .stats-count-statement{
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom:20px;
+    }
+    .stats-pool-buy{
+        font-size: 22px;
+        line-height: 35px;
+    }
+    h1{
+        font-size:22px;
+        font-family:'Cera Pro';
+        line-height: 35px;
+    }
+    .numbers-head{
+        margin-bottom:20px;
+        color:#FFF;
+        font-size:22px;
+        line-height: 35px;
+    }
+    .main-numbers-container{
+        padding:30px;
+        border-radius:25px;
+    }
+    .numbers-container{
+        /*padding:20px;*/
+        width:50%;
+        margin:auto;
+        flex-direction:column;
+    }
+    .number-item{
+        transition:.6s;
+        width:100%;
+        border-right:0;
+        border-bottom:1px solid #FFFFFF;
+        padding: 20px 0;
+    }
+    .number-item:last-child{
+        border-bottom:0;
+    }
+    .number-item .number{
+        font-size:26px;
+    }
+    .number-item .number-reason{
+        font-size:13px;
+    }
+    .home-properties-container{
+        padding:10px;
+        overflow-x: scroll;  	
+        overflow-y: hidden;       
+        white-space: nowrap;        
+        -webkit-overflow-scrolling: touch;        
+        -ms-overflow-style: none; /* IE 11 */        
+        scrollbar-width: none; /* Firefox 64 */
+    }
+    .home-props-with-banner{
+        padding:10px;
+        overflow-x: scroll;  	
+        overflow-y: hidden;       
+        white-space: nowrap;        
+        -webkit-overflow-scrolling: touch;        
+        -ms-overflow-style: none; /* IE 11 */        
+        scrollbar-width: none; /* Firefox 64 */
+    }
+    .prop-option-below{
+        font-size:12px;
+        line-height:20px;
+        margin-top:5px;
+    }
+    .prop-option-top .prop-class{
+        font-size:22px;
+        line-height:35px;
+    }
+    .prop-option-top .all-prop-btn{
+        width:150px;
+        line-height:35px;
+    }
+    .prop-option-top .all-prop-btn a{
+        font-size:14px;
+    }
+    .home-props-with-banner .banner-item{
+        width:0;
+        margin-right:10px;
+        display:none;
+    }
+    .home-props-with-banner .the-prop-items{
+        width:100%;
+        margin-right:0;
+    }
+}
+

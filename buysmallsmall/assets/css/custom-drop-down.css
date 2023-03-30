@@ -1,0 +1,326 @@
+/* CSS Document */
+
+
+.sort-info{
+
+	width:40%;
+
+	padding: 19px 2px 19px 10px;
+
+	background: #fff;
+
+	border: 1px solid #ccc;
+
+	border-right:0;
+
+	border-radius: 4px 0 0 4px;
+
+	overflow: hidden;
+
+	position: relative;
+
+	float:left;
+
+}
+
+.sort-info i{
+
+	color:#00CDA4;
+
+	float:left;
+
+	margin-left:10px;
+
+	margin-right:10px;
+
+	font-size:18px;
+
+	transform: rotate(90deg);
+
+}
+
+.sort-info .sort-text{
+
+	color:#000;
+
+	font-family:avenir-demi;
+
+	float:left;
+
+}
+
+.sort_search_categories{
+
+	width:60%;
+
+	font-size: 16px;
+
+	padding: 19px 8px 19px 4px;
+
+	background: #fff;
+
+	border: 1px solid #ccc;
+
+	border-left:0;
+
+	border-radius: 0 4px 4px 0;
+
+	overflow: hidden;
+
+	position: relative;
+
+	float:right;
+
+	font-family:avenir-regular;
+
+	color:#000;
+
+	cursor:pointer;
+
+}
+
+.sort_search_categories i{
+
+	margin-left:40px;
+
+}
+
+.sort_search_categories .select{
+
+	width: 120%;
+
+	background:url('../img/arrow.png') no-repeat;
+
+	background-position:80% center;
+
+}
+
+
+
+.sort_search_categories .select select{
+
+	background: transparent;
+
+	line-height: 1;
+
+	border: 0;
+
+	padding: 0;
+
+	border-radius: 0;
+
+	width: 120%;
+
+	position: relative;
+
+	z-index: 10;
+
+	font-size: 1em;
+
+	color:#CCC;
+
+	font-family:avenir-demi;
+
+}
+/**** Soflow for booking form ****/
+select.soflow, select.soflow-color {
+	-webkit-appearance: button;
+	-webkit-border-radius: 2px;
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);	
+	-webkit-padding-end: 20px;
+	-webkit-padding-start: 20px;
+	-moz-padding-end: 20px;
+	-moz-padding-start: 20px;
+	/*background-image: url(../img/combo-arrow.jpg);*/
+	background-position: 97% center;
+	background-repeat: no-repeat;
+	border: 1px solid #CCC;
+	color: #555;
+	font-size: inherit;
+	margin: 0;
+	overflow: hidden;
+	padding: 6px 0 8px 2px;   
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height:40px; 
+	border-radius:4px; 
+	width: 100%;  
+	background:transparent; 
+}  
+
+/**Sort Search Field End **/
+
+select#soflow, select#soflow-color {
+	-webkit-appearance: button;
+	-webkit-border-radius: 2px;
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);	
+	-webkit-padding-end: 20px;
+	-webkit-padding-start: 20px;
+	-moz-padding-end: 20px;
+	-moz-padding-start: 20px;
+	/*background-image: url(../img/combo-arrow.jpg);*/
+	background-position: 97% center;
+	background-repeat: no-repeat;
+	border: 1px solid #16163D;
+	color: #555;
+	font-size: inherit;
+	margin: 0;
+	overflow: hidden;
+	padding: 16px 0 16px 16px; 
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height:60px;
+	border-radius:4px;
+	width: 100%; 
+	background:transparent;
+}
+
+.sidebar-sticky select#soflow, select#soflow-color {
+	-webkit-appearance: button;
+	-webkit-border-radius: 2px;
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);	
+	-webkit-padding-end: 20px;
+	-webkit-padding-start: 20px;
+	-moz-padding-end: 20px;
+	-moz-padding-start: 20px;
+	/*background-image: url(../img/combo-arrow.jpg);*/
+	background-position: 97% center;
+	background-repeat: no-repeat;
+	border: 1px solid #CCC;
+	color: #555;
+	font-size: inherit;
+	margin: 0;
+	overflow: hidden;
+	padding: 11px 0 16px 11px; 
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height:55px;
+	border-radius:4px;
+	width: 100%; 
+	background:transparent;
+}
+
+
+select#soflow-user {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);	
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(../img/combo-arrow.jpg);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #9F9E9E;
+   color: #969494;
+   font-size: 14px;
+   margin: 0;
+   overflow: hidden;
+   padding: 8px 15px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 100%;
+}
+@media(max-width:1200px){
+select#soflow, select#soflow-color {
+	-webkit-appearance: button;
+	-webkit-border-radius: 2px;
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);	
+	-webkit-padding-end: 20px;
+	-webkit-padding-start: 20px;
+	-moz-padding-end: 20px;
+	-moz-padding-start: 20px;
+	/*background-image: url(../img/combo-arrow.jpg);*/
+	background-position: 97% center;
+	background-repeat: no-repeat;
+	border: 1px solid #CCC;
+	color: #555;
+	font-size: inherit;
+	margin: 0;
+	overflow: hidden;
+	padding: 4px 0 4px 16px; 
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height:40px;
+	border-radius:4px;
+	width: 100%; 
+	background:transparent;
+}
+.sort-info{
+
+	width:40%;
+
+	padding: 9px 2px 9px 10px;
+
+	background: #fff;
+
+	border: 1px solid #ccc;
+
+	border-right:0;
+
+	border-radius: 4px 0 0 4px;
+
+	overflow: hidden;
+
+	position: relative;
+
+	float:left;
+
+}
+
+.sort-info i{
+
+	color:#00CDA4;
+
+	float:left;
+
+	margin-left:10px;
+
+	margin-right:10px;
+
+	font-size:16px;
+
+	transform: rotate(90deg);
+
+}
+
+.sort-info .sort-text{
+
+	color:#000;
+
+	font-family:avenir-demi;
+
+	float:left;
+
+}
+
+.sort_search_categories{
+
+	width:60%;
+
+	font-size: 13px;
+
+	padding: 10px 8px 10px 4px;
+
+	background: #fff;
+
+	border: 1px solid #ccc;
+
+	border-left:0;
+
+	border-radius: 0 4px 4px 0;
+
+	overflow: hidden;
+
+	position: relative;
+
+	float:right;
+
+}
+}

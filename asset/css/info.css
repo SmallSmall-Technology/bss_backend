@@ -1,0 +1,212 @@
+.info-page-container{
+    width:100%;
+    display:inline-block;
+}
+.page-section{
+    width:100%;
+    display:inline-block;
+}
+.page-section.grey{
+    background:#F4F4F4;
+}
+.page-section-inner{
+    width:80%;
+    margin:50px auto;
+}
+.info-page-title{
+    width:100%;
+    font-size:50px;
+    font-family:'Cera Medium';
+    margin-bottom:20px;
+    color:#282828;
+}
+.info-page-title img{
+    float:left;
+    width:50px;
+    margin-right:20px;
+}
+.info-page-title span{
+    display:inline-block;
+    font-size:50px;
+    line-height:50px;
+    font-family:'Cera Medium';
+    margin-bottom:20px;
+    color:#282828;;
+}
+.info-page-subtitle{
+    width:100%;
+    font-size:25px;
+    font-family:'Cera Pro';
+    margin-bottom:20px;
+    color:#282828;
+}
+.inner-page-head{
+    width:100%;
+    font-size:35px;
+    font-family:'Cera Medium';
+    margin-bottom:20px;
+    color:#282828;
+    margin-top:50px;
+}
+.faq-container-box{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+.faq-container-box-item{
+    width:31%;
+    margin:30px 2% 30px 0;
+    background:#333;
+    border-radius:10px;
+    padding:20px;
+    background:#FFF;
+}
+.faq-container-box-item a{
+    display:block;
+    text-decoration:none;
+}
+.faq-container-box-item a img{
+    width:25px;
+    height:25px;
+    margin-left:20px;
+    margin-right:20px;
+    float:left;
+}
+.faq-container-box-item a span{
+    display:inline-block;
+    line-height:25px;
+    font-family:'Cera Pro';
+    color:#282828;
+    float:left;
+}
+.faq-container-line{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    margin:50px 0;
+}
+.faq-container-line-item{
+    width:100%;
+    margin-bottom:30px;
+    
+}
+.faq-container-line-item .question{
+    width:100%;
+    font-size:25px;
+    line-height:35px;
+    font-family:'Cera Medium';
+    color:#282828;
+    cursor:pointer;
+}
+.faq-container-line-item .answer{
+    transition:.4s;
+    width:100%;
+    font-size:16px;
+    line-height:20px;
+    font-family:'Cera Pro';
+    color:#282828;
+    padding:15px 0 0 20px;
+    height:0;
+    overflow:hidden;
+}
+.faq-container-line-item .answer a{
+    font-family:'Cera Medium';
+    color:#64318A;
+}
+.faq-container-line-item .answer ul{
+    padding-left:30px;
+    margin:20px 0;
+}
+.faq-container-line-item .answer ul li{
+    line-height:30px;
+}
+.back-crumb{
+    width:100%;
+    line-height:30px;
+    padding:20px 5%;
+}
+.back-crumb a{
+    text-decoration:none;
+    font-family:'Cera Bold';
+    color:#64318A;
+    font-size:14px;
+    font-weight:bold;
+}
+@media(max-width:900px){
+    .page-section-inner{
+        width:90%;
+        margin:30px auto;
+    }
+    .info-page-title{
+        font-size:30px;
+        margin-bottom:10px;
+    }
+    .info-page-subtitle{
+        font-size:19px;
+        margin-bottom:10px;
+    }
+    .inner-page-head{
+        font-size:28px;
+        margin-bottom:15px;
+        margin-top:30px;
+    }
+    .faq-container-box-item{
+        width:48%;
+        margin:15px 2% 0 0;
+    }
+    .faq-container-box-item:nth-child(even){
+        width:48%;
+        margin:15px 0 0 0;
+    }
+    .faq-container-box-item a img{
+        width:25px;
+        height:25px;
+        margin-right:10px;
+    }
+    .faq-container-box-item a span{
+        line-height:25px;
+    }
+}
+@media(max-width:500px){
+    .page-section-inner{
+        width:95%;
+        margin:30px auto;
+    }
+    .info-page-title{
+        font-size:26px;
+        margin-bottom:10px;
+    }
+    .info-page-subtitle{
+        font-size:16px;
+        margin-bottom:10px;
+    }
+    .inner-page-head{
+        font-size:24px;
+        margin-bottom:10px;
+        margin-top:20px;
+    }
+    .faq-container-box-item{
+        width:100%;
+        margin:15px 0 0 0;
+    }
+    .faq-container-box-item:nth-child(even){
+        width:100%;
+        margin:15px 0 0 0;
+    }
+    .faq-container-box-item a img{
+        width:20px;
+        height:20px;
+    }
+    .faq-container-box-item a span{
+        line-height:25px;
+    }
+    .faq-container-line-item .question{
+        font-size:20px;
+        line-height:30px;
+    }
+    .info-page-title img{
+        width:30px;
+        margin-right:15px;
+    }
+}

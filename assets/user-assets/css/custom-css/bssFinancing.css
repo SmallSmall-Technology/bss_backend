@@ -1,0 +1,53 @@
+.current-booking {
+  background: #F6F7F8;
+  border-radius: 10px;
+  padding: 4em;
+}
+
+.subscription-btn {
+  background: #222224;
+  border-radius: 4px;
+  min-width: 211px;
+  color: #ffffff
+    /* padding: 2em; */
+}
+
+
+.wallet-btn {
+  background: #EDEDEF;
+  border-radius: 4px;
+
+}
+
+
+.unit-container {
+  background: #e6ebf1;
+  border-radius: 20px;
+  padding: 0.1em;
+  font-size: 14px;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.unit-container__naira,
+.unit-container__percent {
+  /* padding: 1em; */
+  border-radius: 20px;
+  width: 50%;
+  text-align: center;
+  font-weight: lighter;
+  cursor: pointer;
+  color: black
+}
+
+
+
+.set-unit-container {
+  background-color: rgb(12, 12, 12);
+  color: #ffffff
+}
+
+
+.table td, .table th, .table thead th {
+  border: 0;
+}
