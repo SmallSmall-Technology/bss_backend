@@ -1,0 +1,308 @@
+/*#form-wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+form {
+	width: 90%;
+	max-width: 500px;
+}
+#form-title {
+	margin-top: 0;
+	font-weight: 400;
+	text-align: center;
+}
+#debt-amount-slider {
+		display: flex;
+		flex-direction: row;
+		align-content: stretch;
+		position: relative;
+		width: 100%;
+		height: 50px;
+		user-select: none;
+}
+#debt-amount-slider::before {
+	content: " ";
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	width: calc(100% * (#{$number-of-options - 1} / #{$number-of-options}));
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #000;
+}
+#debt-amount-slider input, label {
+	box-sizing: border-box;
+	flex: 1;
+	user-select: none;
+	cursor: pointer;
+}
+#debt-amount-slider label {
+	display: inline-block;
+	position: relative;
+	width: 20%;
+	height: 100%;
+	user-select: none;
+}
+#debt-amount-slider label::before {
+	content: attr(data-debt-amount);
+	position: absolute;
+	left: 50%;
+	padding-top: 10px;
+	transform: translate(-50%, 45px);
+	font-size: 14px;
+	letter-spacing: 0.4px;
+	font-weight: 400;
+	white-space: nowrap;
+	opacity: 0.85;
+	transition: all 0.15s ease-in-out;
+}
+#debt-amount-slider label::after {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 30px;
+	height: 30px;
+	border: 2px solid #000;
+	background: #fff;
+	border-radius: 50%;
+	pointer-events: none;
+	user-select: none;
+	z-index: 1;
+	cursor: pointer;
+	transition: all 0.15s ease-in-out;
+}
+#debt-amount-slider label:hover::after {
+	transform: translate(-50%, -50%) scale(1.25);
+}
+		
+#debt-amount-slider input {
+	display: none;
+}
+#debt-amount-slider input:checked label::before {
+	font-weight: 800;
+	opacity: 1;
+}
+#debt-amount-slider input:checked label::after {
+	border-width: 4px;
+	transform: translate(-50%, -50%) scale(0.75);
+}
+
+#debt-amount-slider:nth-child(1):checked #debt-amount-pos {
+	left: (1 * 20%) - 10%};
+}
+#debt-amount-slider:nth-child(2):checked #debt-amount-pos {
+	left: (2 * 20%) - 10%};
+}
+#debt-amount-slider:nth-child(3):checked #debt-amount-pos {
+	left: (3 * 20%) - 10%};
+}
+#debt-amount-slider:nth-child(4):checked #debt-amount-pos {
+	left: (4 * 20%) - 10%};
+}
+#debt-amount-slider:nth-child(5):checked #debt-amount-pos {
+	left: (5 * 20%) - 10%};
+}
+
+#debt-amount-pos {
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 12px;
+	height: 12px;
+	background: #000;
+	border-radius: 50%;
+	transition: all 0.15s ease-in-out;
+	transform: translate(-50%, -50%);
+	border: 2px solid #fff;
+	opacity: 0;
+	z-index: 2;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+		width: 24px;
+		opacity: 1;
+		margin-right: 12px;
+	}
+	to {
+		transform: rotate(360deg);
+		width: 24px;
+		opacity: 1;
+		margin-right: 12px;
+	}
+}*/
+
+.container-minax {
+    width:100%;
+    position:relative;
+    z-index:0;
+    text-align:center;
+}
+.box-minmax{
+  margin-top: 30px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #FFFFFF;
+  margin:auto;
+}
+.box-minmax span:first-child{
+    margin-left: 10px;
+  }
+.range-slider {
+    margin-top: 20px;
+    
+}
+.rs-range {
+    margin-top: 29px;
+    width: 90%;
+    -webkit-appearance: none;
+}
+.rs-range:focus {
+    outline: none;
+}
+.rs-range::-webkit-slider-runnable-track {
+    width: 90%;
+    height: 1px;
+    cursor: pointer;
+    box-shadow: none;
+    background: #16163D;
+    border-radius: 0px;
+    border: 0px solid #010101;
+}
+.rs-range::-moz-range-track {
+    width: 90%;
+    height: 1px;
+    cursor: pointer;
+    box-shadow: none;
+    background: #16163D;
+    border-radius: 0px;
+    border: 0px solid #010101;
+}
+  
+.rs-range::-webkit-slider-thumb {
+    box-shadow: none;
+    border: 0px solid #ffffff;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.25);
+    height: 42px;
+    width: 22px;
+    border-radius: 22px;
+    background: #16163D;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -20px;
+}
+.rs-range::-moz-range-thumb{
+    box-shadow: none;
+    border: 0px solid #ffffff;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.25);
+    height: 42px;
+    width: 22px;
+    border-radius: 22px;
+    background: #16163D;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -20px;
+}
+.rs-range::-moz-focus-outer {
+
+border: 0;
+    
+}
+.aa-dp{
+    display:block;
+    width:100%;
+    line-height:49px;
+    font-family:mulish-bold;
+    font-size:20px;
+}
+.yr-dp{
+    display:block;
+    width:100%;
+    line-height:49px;
+    font-family:mulish-regular;
+    font-size:16px;
+}
+.rs-label {
+    position: relative;
+    transform-origin: center center;
+    display: block;
+    width: 98px;
+    height: 98px;
+    background: transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 2px solid #16163D;
+    margin-top: 20px;
+    margin-left: 2px;
+    left: 0;
+    color: #16163D;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 36px;
+    font-family:mulish-bold;
+}
+.rs-label::after {
+    /*content: "%";*/
+    display: block;
+    font-size: 20px;
+    letter-spacing: 0.07em;
+    margin-top: -2px;
+    font-family:mulish-regular;
+}
+@media(max-width:900px){
+ .box-minmax{
+  margin-top: 30px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #FFFFFF;
+  margin:auto;
+} 
+.aa-dp{
+    display:block;
+    width:100%;
+    line-height:40px;
+    font-family:mulish-bold;
+    font-size:18px;
+}
+.yr-dp{
+    display:block;
+    width:100%;
+    line-height:40px;
+    font-family:mulish-regular;
+    font-size:14px;
+}
+.rs-label {
+    position: relative;
+    transform-origin: center center;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 2px solid #16163D;
+    margin-top: 20px;
+    margin-left: 2px;
+    left: 0;
+    color: #16163D;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-family:mulish-bold;
+}
+}

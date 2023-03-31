@@ -1,0 +1,102 @@
+.stats-wrapper{
+    background: #B2A7B7;
+    border-radius: 15px;
+    margin: 50px auto;
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    align-items:center;
+    flex-direction:column;
+    width: 95%;
+    padding:30px;
+}
+.stats-pool-buy{
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+}
+.stats-text{
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+    /* width:80%; */
+}
+.stats-paper-wrapper{
+    padding:30px 0;
+}
+.stats-grid-box{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:3rem;
+
+}
+.stats-paper{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.stats-percentage-count{
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    color: #FFFFFF;
+}
+.stats-count-statement{
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.stats-lets-go{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap:0.5rem;
+    text-decoration: none;
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #FFFFFF;
+    background: #64318A;
+    border-radius: 4px;
+    padding:18px 80px;
+}
+
+
+@media screen and (min-width:768px){
+    .stats-wrapper{
+        /* width: 1172px; */
+        width:80%;
+        height: 456px;
+        padding:0px;
+
+    }
+    .stats-text{
+        width:50%;
+    }
+    .stats-grid-box{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:10rem;
+    }
+ 
+}
+
+@media screen and (min-width:425px){
+    .stats-grid-box{
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* gap:10rem; */
+    }
+ 
+}
+
