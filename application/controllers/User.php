@@ -1036,5 +1036,79 @@ class User extends CI_Controller {
 
 	}	
 
+	// User Notification 
+	
+	public function notification()
+	{
+
+		if (!file_exists(APPPATH . 'views/user/notification.php')) {
+
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		if($this->session->has_userdata('userID')){
+
+		$data['userID'] = $this->session->userdata('userID');			
+
+		$data['fname'] = $this->session->userdata('fname');			
+
+		$data['lname'] = $this->session->userdata('lname');			
+
+		$data['email'] = $this->session->userdata('email');		
+
+		$data['refCode'] = $this->session->userdata('referral_code');		
+
+		$data['user_type'] = $this->session->userdata('user_type');		
+
+		$data['profile'] = $this->buytolet_model->get_user($data['userID']);	
+
+		$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
+
+		$data['verification_status'] = $this->session->userdata('verified');
+
+		$data['giftbags'] = $this->buytolet_model->getGiftbags($data['userID']);
+
+		$data['sent_gifts'] = $this->buytolet_model->getSentGifts($data['userID']);
+
+		$data['added_gifts'] = $this->buytolet_model->getAddedGifts($data['userID']);
+
+		$data['notifications'] = $this->buytolet_model->notification();
+
+		$data['profile_title'] = "Notification";
+
+		$data['title'] = "Notification";
+
+		if ($this->input->is_ajax_request()) {
+			// Retrieve data for AJAX response
+			$notificationCount = $this->buytolet_model->getDailyNotificationsCount();
+
+			$response = ['notificationCount' => $notificationCount];
+
+			$notificationResponse = json_encode($response['notificationCount']);
+
+			// Remove double quotes around values
+			echo $notificationCountResponse = '(' . str_replace('"', '', $notificationResponse) . ')';
+		} else {
+			// Load the view for non-AJAX request
+			$this->load->view('user/templates/header', $data);
+
+			$this->load->view('user/templates/verification-bar', $data);
+
+			$this->load->view('user/notification', $data);
+
+			$this->load->view('user/templates/js-files', $data);
+
+			$this->load->view('user/templates/footer');
+		}
+
+		}else{			
+
+			redirect( base_url()."login" ,'refresh');			
+
+		}
+	}
+
+
 }
 

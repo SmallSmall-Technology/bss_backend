@@ -102,6 +102,8 @@ $route['test/check-worth'] = 'buytolet/getPropertyWorth';
 
 $route['test/shares-certificate'] = 'buytolet/shares_certificate';
 
+$route['user/notification'] = 'user/notification';
+
 $route['user/send-gift'] = 'user/send_gift';
 
 $route['user/referrals'] = 'user/referral';
