@@ -1,0 +1,26 @@
+.message-container {
+  background: #F3F6F8;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.message-container--latest {
+  background: #F3ECFF;
+  border: 1px solid #CDBADB;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.bss-btn {
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: #662D91;
+
+}
+
+.msg-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background: #FFFFFF;
+}

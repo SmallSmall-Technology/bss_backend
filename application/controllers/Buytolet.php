@@ -29,6 +29,7 @@ class Buytolet extends CI_Controller {
 		$data['pool_properties'] = $this->buytolet_model->getPoolHomeProps();
 
 		$data['locations'] = $this->buytolet_model->get_locations($states);
+		//to check later, the fn get_locations(). the group by('a.city') breaks my query in the model.
 
 		if($this->session->has_userdata('loggedIn')){
 
@@ -3458,6 +3459,6 @@ class Buytolet extends CI_Controller {
 		return $worth;
 	}
 
-	
+
 }
 
