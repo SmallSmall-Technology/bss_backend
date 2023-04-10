@@ -1032,7 +1032,7 @@ class Buytolet_model extends CI_Model {
 		
 		$this->db->join('cities as b', 'b.name = a.city');
 		
-		$this->db->group_by('a.city'); 
+		// $this->db->group_by('a.city'); // Its break my querry, To check back
 		
 		$this->db->order_by('b.name', 'ASC');
 
