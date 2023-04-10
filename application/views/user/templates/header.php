@@ -36,12 +36,6 @@
   <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
   <script src="//run.louassist.com/v2.5.1-m?id=965141804549"></script>
 
-  <script>
-      LOU.identify(<?php echo $userID ?>{company: "Buy Small Small", permissions : 'user', plan: 'Investor'})
-  </script>
-
- 
-
   <title><?php echo $title; ?></title>
 </head>
 

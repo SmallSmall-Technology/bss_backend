@@ -5,7 +5,7 @@
 
  </div>
  <div class="row mb-5">
-   <div class="col-md-12 d-md-flex   d-none justify-content-between mb-4">
+   <div class="col-md-12 d-md-flex d-none justify-content-between mb-4">
      <p>All notification</p>
    </div>
    <div id="" class="col-12">
@@ -27,7 +27,7 @@
            <div class="bss-btn px-3 py-2  mr-md-5 d-none d-md-block">
              Buysmallsmall
            </div>
-           <div class="bss-btn p-2  mr-2 d-md-none d-block">
+           <div class="bss-btn p-2 mr-2 d-md-none d-block">
              BSS
            </div>
            <div class="msg-intro">
@@ -87,7 +87,6 @@
  </main>
 
  <script>
-   // $(document).ready(function() {
    // Make Ajax request to fetch notifications count and interval set for 3 sec.
    setInterval(function() {
      $.ajax({
@@ -99,7 +98,6 @@
        }
      });
    }, 3000)
-   // });
  </script>
 
  </body>
