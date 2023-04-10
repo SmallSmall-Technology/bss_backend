@@ -1,0 +1,682 @@
+.property-page-wrapper{
+    width:90%;
+    margin-bottom: 8rem;
+    margin:auto;
+    display:flex;
+    flex-direction:row;
+}
+
+.property-slide-image{
+    width: 100%;
+    height: 400px;
+    border-radius:10px;
+    position:relative;
+}
+.nav-arrows{
+    position:absolute;
+    top: 50%;
+    left: 2.5%;
+    display:flex;
+    justify-content:space-between;
+    width:95%;
+}
+.mobile-icon-section{
+    display:none;
+
+}
+.property-left-section{
+    width:calc(100% - 40%);
+
+}
+.property-left-word-sect{
+    padding:2rem 0;
+    /* border-bottom: 1px solid #DDDDDD; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.features_description{
+    border-top: 1px solid #DDDDDD;
+    padding-top:3rem;
+    font-family: 'Cera Pro';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    color: #282828;
+
+}
+.switch{
+    background: #F3ECFF;
+    border-radius: 20px;
+    display: flex;
+    width: 400px;
+    margin:auto;
+    margin-top: 50px;
+    align-items:center;
+}
+.switch .period-selector{
+    width:50%;
+    line-height:40px;
+    font-family:'Cera Pro';
+    text-align:center;
+    cursor:pointer;
+}
+.switch .period-selector.active{
+    background:#FFF;
+    border: 1px solid #413C68;
+    border-radius: 20px;
+}
+.highlight-tbl-container{
+    width:100%;
+    display:inline-block;
+}
+.highlight-tbl{
+    width:100%;
+}
+.highlight-tbl tr th, .highlight-tbl tr td{
+    font-family:'Cera Pro';
+    text-align:left;
+    font-size:12px;
+}
+/*.switch .monthly{
+    background: #FFF;
+    border-radius: 20px;
+    height: 100%;
+    width: 30%;
+    border: 1px solid #413C68;
+    text-align: center;
+    padding:5px 0;
+
+}*/
+.year-selector-container{
+    width:100%;
+    display:inline-block;
+    text-align:center;
+}
+.year-selector-container .year-selector{
+    width:300px;
+    margin:auto;
+}
+.switch .annual{
+    /* text-align: center; */
+}
+.rent-and-yield{
+    margin-top:50px;
+    width: 70%;
+    display: grid;
+    gap: 1rem;
+}
+.rent-and-yield .key-and-value{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.rent-and-yield h1{
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #16163D;
+  
+}
+.rent-and-yield p{
+    font-family: 'Cera Pro';
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #282828;
+}
+.finance-desc{
+    font-size:14px;
+    position:relative;
+}
+.red{
+    color:#f00;
+}
+.payment-box{
+    background: #F3ECFF;
+    border-radius: 7px;
+    padding:2rem;
+    margin-bottom:20px;
+    /* width: 90%; */
+}
+.outright-payment{
+    display:none;
+}
+.payment-box h2{
+    font-family: 'Cera Pro';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    color: #282828;
+    text-align:center;
+    font-weight:bold;
+}
+.payment-box >h4,
+.payment-box >p,
+.payment-box >h1{
+    text-align: center;
+    color: #282828;
+    font-family: 'Cera Pro';
+}
+.payment-box >h4{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+.payment-box > p{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+}
+.payment-box > h1{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+}
+.payment-btn{
+    width:150px;
+    line-height:50px;
+    color:#FFF;
+    background:#64318A;
+    border-radius:5px;
+    text-align:center;
+    font-size:14px;
+    margin:auto;
+    margin-top:20px;
+    cursor:pointer;
+    border:0;
+}
+.payment-btn a{
+    text-decoration: none;
+    display:block;
+    color:#FFF;
+    border-radius:5px;
+    font-size:14px;
+}
+.financing-options-sect{
+    width:90%;
+    margin:auto;
+}
+.financing-options-sect p{
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    color: #282828;
+    white-space: nowrap;
+}
+.option-list1,
+.option-list2,
+.option-list3{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding:1.5rem 0rem;
+}
+.option-list1,
+.option-list2{
+    border-bottom:1px dashed #B2A7B7;
+}
+
+.finance-right-options{
+    display: flex;
+    justify-content:space-between;
+    gap: 2rem;
+    border:0;
+    /*border-left: 1px solid #B2A7B7;*/
+    padding-left: 2rem;
+}
+.finance-right-options div{
+    width:100%;
+}
+.finance-right-options button{
+    padding:15px 20px;
+    background: #64318A;
+    border-radius: 5px;
+    color:#fff;
+    height:fit-content;
+    border: 1px solid #64318A;
+    cursor:pointer;
+}
+.finance-left-options .finance{
+    font-family: 'Cera Pro';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
+    color: #282828;
+    line-height: 20px;
+    white-space: nowrap;
+}
+.total_desc{
+    font-size:24px;
+    font-weight:700;
+}
+.finance-numbers{
+    width:100%;
+    text-align:right;
+}
+
+/*  */
+
+.price-discount-sect{
+    display: flex;
+    gap: 40px;
+}
+.location-sect{
+    display: flex;
+    gap: 0.3rem;
+}
+.property-props{
+    display: flex;
+    gap: 1rem;
+}
+.property-left-word-sect h1, 
+.property-left-word-sect h2, 
+.property-left-word-sect h3,
+.property-left-word-sect p{
+    color: #282828; 
+    font-family: 'Cera Pro';
+
+}
+.property-left-word-sect h1{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+    display:inline-block;
+}
+.property-left-word-sect h2{
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 31px;
+}
+.property-left-word-sect h2.list-price{
+    font-size:16px;
+}
+.property-left-word-sect h3{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+.property-left-word-sect p{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: #282828;
+}
+
+.property-right-wrapper{
+    padding:0;
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 40%;
+}
+
+
+.like-share-card{
+    background: #FFFFFF;
+    padding:1rem ;
+    padding-right:1rem ;
+    border-radius: 10px;
+    border: 1px solid #E5E5E5;
+    width:80%;
+    margin:auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.like-share-word-sect{
+    border-bottom: 1px solid #DDDDDD;
+    padding:0.8rem 0;
+    margin-bottom:1.5rem;
+}
+.like-share-card h3{
+    font-family: 'Cera Pro';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #282828;
+}
+.like-share-card p{
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: #282828;
+}
+.book-inspection-btn{
+
+}
+.book-inspection-btn button{
+    width:100%;
+    background: #64318A;
+    padding:0.7rem 0;
+    border: 1px solid #64318A;
+    color: #fff;
+    border-radius:5px;
+    cursor:pointer;
+}
+.book-inspection-like-share{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding:1rem 0;
+    position:relative;
+}
+.share-container{
+    width:180px;
+    padding:10px 15px;
+    background:#64318A;
+    border-radius:5px;
+    position:absolute;
+    left:0;
+    top:55px;
+    display:none;
+}
+.share-container span{
+    transition:.4s;
+    display:inline-block;
+    width:30px;
+    line-height:30px;
+    border:1px solid #FFF;
+    border-radius:50%;
+    color:#FFF;
+    text-align:center;
+    font-size:12px;
+    margin-right:5px;
+    cursor:pointer;
+}
+.share-container span a{
+    display:block;
+    color:#FFF;
+}
+.share-container span:hover{
+    transition:.4s;
+    background:#FFF;
+    color:#64318A;
+}
+.share-container span a:hover{
+    transition:.4s;
+    color:#64318A;
+}
+.share-container span:last-child{
+    margin-right:0;
+}
+.share-container .container-pointer{
+    width:10px;
+    height:10px;
+    background:#64318A;
+    position:absolute;
+    top:-3px;
+    right:50%;
+    transform: translate(0, -50%);
+    transform: rotate(45deg);
+}
+.book-inspection-like-share button{
+    transition:.4s;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap: 0.5rem;
+    padding:0.5rem;
+    border-radius:7px;
+    border: 1px solid #282828;
+    background: transparent;
+    cursor:pointer;
+}
+.book-inspection-like-share button:hover{
+    transition:.4s;
+    background:#64318A;
+    color:#FFF;
+}
+.book-inspection-like-share button img{
+    width:15px;
+    height:auto;
+}
+.slidecontainer {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 1rem;
+    justify-content:center;
+    margin: 40px 0;
+  }
+.percentage-values{
+    display:flex;
+    font-family: "Helvetica Neue",Helvetica,Arial;
+    justify-content:space-between;
+    width:90%;
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    color: #282828;
+    text-align: center;
+
+}
+.percentage-values-mobile{
+    display: none;
+}
+.book-inspection-mobile{
+    display: none;
+}
+  
+.slider {
+    -webkit-appearance:none;
+    width: 90%;
+    height: 5px;
+    margin: 0 auto;
+    background: #000;
+    border-radius:10px;
+    outline: none;
+    /* opacity: 0.7; */
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 45px;
+    height: 30px;
+    border-radius: 40%;
+    background: #515BE0;
+    cursor: pointer;
+    /* overflow-x:hidden; */
+
+}
+
+.slider::-moz-range-thumb {
+    width: 45px;
+    height: 30px;
+    background: #515BE0;
+    cursor: pointer;
+}
+.full-disp{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+.half-disp{
+    width:50%;
+    padding-right:20px;
+}
+.date-top{
+    display:block;
+    width:100%;
+    margin-bottom:10px;
+    font-family:'Cera Pro';
+    font-size:12px;
+    color:#282828;
+}
+.date-bottom{
+    display:block;
+    width:100%;
+    font-family:'Cera Medium';
+    font-size:12px;
+    color:#282828;
+}
+.finance-left-options{
+    position:relative;
+}
+.disabled-btn{
+    background:#B2A7B7;
+    cursor:not-allowed;
+}
+  @media screen and (max-width:1024px) {
+    
+    .property-left-section{
+        width:100%;
+    }
+    .property-right-wrapper{
+        padding:0;
+        position:static ;
+        margin:10px auto;
+        width: 70%;
+        display: none;
+    }
+    .property-slide-image img{
+        width: 100%;
+    }
+    .payment-box{
+        padding:1rem;
+    }
+    .financing-options-sect{
+        width:100%;
+        margin:auto;
+    }
+    .property-left-word-sect h1{
+        font-size: 20px;
+    }
+    .property-left-word-sect h2{
+        font-size: 18px;
+    }
+    .option-list1,.option-list2,.option-list3{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding:1.5rem 0rem;
+    }
+    .finance-left-options .finance{
+        font-size: 14px;
+    }
+    .finance-right-options{
+        /* border: none; */
+        padding-left:5%;
+        margin-left: 3%;
+        gap: 0.2rem;
+    }
+    .percentage-values{
+        display: none;
+    }
+    .finance-right-options button {
+        padding: 7px 10px;
+        height: fit-content;
+        border: 1px solid #64318A;
+    }
+    
+    .slidecontainer {
+        width: 100%;
+        display:none;
+    }
+    .percentage-values-mobile{
+        width: 90%;
+        margin: 30px auto;
+        display: block;
+    }
+    .percentage-values-mobile button{
+        width: 80%;
+        margin: auto;
+    }
+    .book-inspection-mobile{
+        width: 90%;
+        margin: 30px auto;
+        display: block;
+        position:fixed;
+        bottom:0px;
+    }
+    .book-inspection-mobile button{
+        width: 80%;
+        margin: auto;
+    }
+    .switch .monthly{
+        width: 45%;
+    }
+    .features_description{
+        font-size: 16px;
+    }
+    .mobile-icon-section{
+        display:flex;
+        justify-content:right;
+    }
+    .mobile-icon-section div{
+        display:flex;
+        gap: 1rem;
+    }
+    .mobile-icon-section div button{
+        padding:1rem 1.5rem;
+        border-radius:4px;
+        border: none;
+    }
+}
+@media(max-width:900px){
+    .highlight-tbl-container{
+        width:100%;
+        display:block;
+        overflow-x:auto;
+    }
+    .highlight-tbl{
+        width:100%;
+    }
+    .highlight-tbl tr th{
+        width:200px !important;
+        padding:5px 10px;
+        white-space:nowrap;
+    }
+    .highlight-tbl tr td{
+        width:200px !important;
+        padding:5px 10px;
+        white-space:nowrap;
+    }
+    
+    .finance-right-options{
+        display: flex;
+        justify-content:space-between;
+        gap: 0;
+        border:0;
+        /*border-left: 1px solid #B2A7B7;*/
+        padding-left: 2rem;
+        flex-direction:column;
+    }
+    .finance-right-options div{
+        width:100%;
+    }
+    .finance-right-options button{
+        padding:10px 10px;
+        color:#fff;
+        height:fit-content;
+    }
+    .finance-left-options .finance{
+        font-family: 'Cera Pro';
+        font-size: 16px;
+        line-height: 20px;
+        white-space: nowrap;
+    }
+    
+}
+
+@media(max-width:400px){
+    .full-disp{
+        flex-direction:column;
+    }
+    .half-disp{
+        width:100%;
+        padding-right:0;
+        margin-bottom:20px;
+    }
+}
+ 

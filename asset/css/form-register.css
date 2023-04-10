@@ -1,0 +1,395 @@
+.form-wrapper{
+    margin: auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* padding: 20px; */
+    width: 80%;    
+}
+.form-input-container{
+    display:grid;
+    gap:1rem; 
+    min-width:40%;
+    position:relative;
+}
+.double-span-col-input{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:1rem;
+    margin-bottom:0;
+}
+.single-span-col-input{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:1rem;
+    margin-bottom:0;
+}
+.single-span-col-input .button,
+.single-span-col-input button {
+    background:#64318A;
+    border:1px solid #64318A;
+    padding:20px;
+    margin: 10px 0;
+    border-radius:7px;
+    color:#fff;
+    font-size:16px;
+    text-decoration: none;
+    text-align: center;
+    cursor:pointer;
+    font-family:'Cera Pro';
+}
+.single-span-col-input > p{
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: #282828;
+    text-align:center;
+    padding:10px 0 10px 0;
+    border-bottom: 1px solid #dddddd;
+}
+.form-title{
+    margin:20px 0;
+}
+.form-title > h1, .form-title > p {
+    font-family: 'Cera Pro';
+    text-align:center;
+}
+.form-title > h1{
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+}
+.form-title > p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+}
+.half-span{
+    width: 100%;
+    background:red;
+}
+.sign-up-link{
+    text-align:center;
+    padding:10px 0;
+}
+#field-label{
+    background:#FFF;
+    font-size:12px;
+    color:#333;
+}
+#field-label.hanging{
+    position:absolute;
+    top:-18px;
+    left:0;
+    padding:10px;
+    padding-left:0;
+}
+.textInput-box{
+    position:relative;
+}
+.textInput-box, .text-area{
+    padding:10px; 
+    border: 1px solid rgb(226, 231, 234);
+    border-radius:4px;
+    outline:none;
+    font-family:'Cera Pro';
+} 
+.textInput-box input{
+    width:100%;
+    height:30px;
+    outline: none;
+    border: none;
+    padding:10px;
+    border-radius:4px;
+}
+select {
+    background-color: white;
+    border: 1px solid rgb(226, 231, 234) !important;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 10px;
+    color: grey;
+    font-size: 18px;
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family:'Cera Pro';
+  }  
+select.minimal {
+    width:100%;
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%),
+      linear-gradient(to right, #fff, #fff);
+    background-position:
+      calc(100% - 20px) calc(1em + 12px),
+      calc(100% - 15px) calc(1em + 12px),
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+}  
+select.minimal:focus {
+    background-image:
+      linear-gradient(45deg, green 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, green 50%),
+      linear-gradient(to right, #fff, #fff);
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
+}
+input::-webkit-input-placeholder {
+	  font-size: 16px;
+}
+input::-ms-input-placeholder { 
+    font-size: 16px;
+}
+input:-ms-input-placeholder {
+    font-size: 16px;
+}
+::placeholder {
+    font-size: 16px;
+}
+.form-div-txt{
+    width:100%;
+    font-weight:bold;
+    color:#333;
+    margin-top:20px;
+    margin-bottom:25px;
+    font-family:'Cera Pro';
+    font-size:14px;
+    position:relative;
+  }
+  .form-div-txt i{
+      position:absolute;
+      right:0;
+      top:50%;
+      transform:translate(-50%, 0);
+  }
+  .beneficiary-form{
+      cursor:pointer;
+  }
+  .add-beneficiary{
+      display:none;
+  }
+  .formContainer{
+    width:100%;
+    display:inline-block;
+  }
+  .summary-container{
+    width:80%;
+    border-radius:10px;
+    background:#F3ECFF;
+    padding:40px;
+    margin:auto;
+    margin-top:50px;
+  }
+  .summary-header{
+    width:50%;
+    margin-bottom:20px;
+    text-align:left;
+    font-family:'Cera Medium';
+    font-size:36px;
+    color:#282828;
+  }
+  .payment-summary{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+  }
+  .summary-dets{
+    width:50%;
+    padding:10px;
+  }
+  .summary-sub-head{
+    width:100%;
+    margin-bottom:20px;
+    font-family:'Cera Pro';
+    font-size:14px;
+    color:#282828;
+  }
+  .summary-prop-title{
+    width:100%;
+    margin-bottom:10px;
+    font-family:'Cera Pro';
+    font-size:30px;
+    color:#282828;
+  }
+  .summary-prop-dets{
+    width:100%;
+    margin-bottom:10px;
+    font-family:'Cera Pro';
+    font-size:15px;
+    color:#282828;
+  }
+  .summary-desc{  
+    width:100%;
+    margin-bottom:5px;
+    font-family:'Cera Pro';
+    font-size:15px;
+    color:#282828;
+  }
+  .summary-info{  
+    width:100%;
+    font-family:'Cera Pro';
+    font-size:25px;
+    color:#282828;
+  }
+  .summary-table .summary-tr td{
+    padding:0 0 20px 0;
+  }
+  .uploadFormContainer{
+    width:50%;
+    padding:20px;
+    margin:auto;
+    margin-top:30px;
+  }
+  .align-left{
+    text-align:left;
+  }
+  .align-right{
+    text-align:right;
+  }
+  .align-center{
+    text-align:center;
+  }
+  .uploadArea{
+    width:100%;
+    padding:20px;
+    border-radius:10px;
+    border:2px dashed #DDDDDD;
+    color:#64318A;
+    font-size:14px;
+    font-weight:bold;
+    margin-top:0;
+    text-align:center;
+    font-family:'Cera Pro';
+  }
+  .doc-submit-btn{
+    width:100%;
+    border:0;
+    border-radius:5px;
+    line-height:50px;
+    background:#64318A;
+    color:#FFF;
+    text-align:center;
+  }
+  .payment-txt{
+    width:100%;
+    line-height:60px;
+    color:#64318A;
+    font-family:'Cera Pro';
+    font-size:15px;
+    text-align:center;
+  }
+  .payment-txt span{
+    font-weight:bold;
+    color:#282828;
+    font-size:20px;
+  }
+  #dd-dir{
+    color:#333;
+    margin-top:20px;
+  }
+  #dd-dir .browse-btn, #dd-dir .browse-btn-2{
+    padding:5px 8px;
+    background:#64318A;
+    color:#FFF;
+    font-size:12px;
+    border-radius:4px;
+  }
+  .finance-table-container{
+      width:100%;
+      overflow-x:scroll;
+	-webkit-overflow-scrolling: touch;	
+	-ms-overflow-style: none; /* IE 11 */	
+    scrollbar-width: none; /* Firefox 64 */
+  }
+  .second-party-form{
+      display:none;
+      width:100%;
+      min-height:42px;
+      max-height:42px;
+      overflow:hidden;
+      transition:4s;
+  }
+  .element{
+      width:100%;
+      height:auto;
+      padding-bottom:20px;
+      padding-top:20px;
+      border-top:1px #F2F2F2 solid;
+  }
+  @media(max-width:900px){
+      .payment-txt{
+        line-height:20px;
+        font-size:15px;
+        margin-bottom:20px;
+      }
+      .payment-txt span{
+        font-size:18px;
+      }
+      .summary-container{
+        width:95%;
+        border-radius:5px;
+        padding:20px;
+        margin-top:30px;
+      }
+      .summary-header{
+        width:100%;
+        margin-bottom:0;
+        text-align:left;
+        font-family:'Cera Medium';
+        font-size:24px;
+      }
+      .payment-summary{
+        flex-direction:column;
+      }
+      .summary-dets{
+        width:100%;
+        padding:0;
+      }
+      .summary-prop-title{
+        margin-bottom:5px;
+        font-size:24px;
+      }
+      .summary-prop-dets{
+        width:100%;
+        line-height:25px;
+        margin-bottom:5px;
+        font-size:15px;
+      }
+      .summary-desc{  
+        margin-bottom:5px;
+        font-size:14px;
+        font-weight:bold;
+      }
+      .summary-info{  
+        font-size:16px;
+        padding-right:15px;
+        white-space:nowrap;
+      }
+      .uploadFormContainer{
+        width:90%;
+        padding:0;
+        margin-top:20px;
+      }
+      
+  }

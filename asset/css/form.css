@@ -1,0 +1,362 @@
+
+/* <<<Header styling>>> */
+header{
+    display:flex;
+    flex-direction:row;
+    gap:40px;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:40px;
+    font-family:sans-serif;
+}
+.info{
+    width:50%;
+    margin:auto;
+}
+.info > h1{
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    color: #282828;
+}
+.header__image{
+    justify-content: center; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:20px;
+    font-family:sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 11px;
+    padding:20px 0;
+    text-align:center;
+}
+.header__image img{
+    width:30px;
+    height:30px;
+    margin-bottom:5px;
+}
+.header__image input{
+    margin-top:5px;
+}
+.finance-form-elem-container{
+    width:100%;
+    display:inline-block;
+    margin-bottom:20px;
+}
+
+.header__info{
+    border-radius:10px;
+     height: 5px;
+     width:100%; 
+     background-color: #D9D9D9;
+     border:none;
+
+
+}
+#personal__headinfo{
+    border-radius:10px;
+    background:#64318A;
+    height:5px;
+    width:100%;
+    gap:70px;
+    border:none;
+}
+.info h1{
+    width: 100%;
+    height: 45px;
+    left: 531px;
+    top: 434px;
+    justify-content: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-family:sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    color: #282828;
+}
+#persona{
+    font-style:normal;
+    font-family:sans-serif;
+    font-weight:500;
+    font-size:18px;
+    line-height:18px;
+    color: #282828;
+    width:100%;
+    margin-top:20px;
+    text-align:center;
+}
+.form__one{
+    margin:30px;
+    align-items: center;
+    justify-content: center; 
+    gap:20px;
+    box-sizing: border-box;
+}
+.form__one .finance-form-elem-container label{
+    display:block;
+    width:100%;
+    font-family: 'Cera Pro';
+    margin-bottom:5px;
+    font-size:14px;
+}
+.form__one .finance-form-elem-container >input{
+    width:100%;
+    height: 61px;
+    font-size: 16px;
+    font-family: 'Cera Pro';
+    border-radius:7px;
+    box-sizing:border-box;
+    border: 1px solid #DDDDDD;
+    padding-left:5%;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    color:#000000;
+    outline:none;
+}
+.form__one .finance-form-elem-container > textarea{
+    padding: 10px;
+    width:100%;
+    height: 40px;
+    font-size: 16px;
+    font-family: 'Cera Pro';
+    color: #64318A;
+    background-color: #fff;
+    border-radius:7px;
+    box-sizing:border-box;
+    height: 131px;
+    border: 1px solid #DDDDDD;
+    padding-left:5%;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    color:#000000;
+    outline:none;
+}
+.form__one .finance-form-elem-container > select{
+    color:#000000;
+}
+
+.form__one .finance-form-elem-container select{
+    width:100%;
+    height: 61px;
+    font-size: 16px;
+    font-family: 'Cera Pro';
+    margin: 10px 0;
+    border-radius:7px;
+    box-sizing:border-box;
+    border: 1px solid #DDDDDD;
+    padding-left:5%;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    color: #ABACB2;
+}
+
+#fname{
+    border-radius:10px;
+    box-sizing:border-box;
+    width: 47%;
+    height: 61px;
+    border: 1px solid #DDDDDD;
+    margin-right:10px;
+    padding-left:5%;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    outline:none;
+    /* color:#000000; */
+}
+#lname{
+    border-radius:10px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 61px;
+    border: 1px solid #DDDDDD; 
+    padding-left:5%;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    outline:none;
+}
+#marital__status{
+    background-image: url(../images/angudwn.svg);
+    background-repeat: no-repeat;
+    background-position: 460px 10px;
+}
+#gender{
+    background-image: url(../images/angudwn.svg);
+    background-repeat: no-repeat;
+    background-position: 460px 10px;
+}
+#finance-button{
+    height: 61px;
+    background:#CCC;
+    border-radius: 7px;
+    color:#FFFFFF;
+    box-sizing:border-box;
+    width:100%;
+    font-size:18px;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 700;
+    border:0;
+}
+#finance-button.activated-button{
+    background: #64318A;
+    cursor:pointer;
+}
+#finance-button >a{
+    text-decoration:none;
+    color:#FFFFFF;
+}
+.form__one .finance-form-elem-container input::placeholder{
+    color: #ABACB2;
+}
+.form__one .finance-form-elem-container p{
+    line-height:20px;
+    color: #414042;
+    font-size:13px;
+    text-align:center;
+    font-family:'Cera Pro';
+    margin:20px 0;
+}
+#btn__tags{
+    margin-top:30px;
+}
+#back__btn{
+    border-radius: 7px;
+    color: #282828;
+    line-height: 61px;
+    font-family:sans-serif;
+    width:35%;
+    border:0;
+    margin-right:3%;
+    float:left;
+    text-align:center;
+    background:#CCC;
+}
+#next__btn{
+    width:60%;
+    height: 61px;
+    background: #64318A;
+    border-radius: 7px;
+    color: #FFFFFF;
+    font-family:sans-serif;
+    border:0;
+    float:left;
+}
+@media only screen and (max-width: 900px){
+    .header__img{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        gap:1px;
+        text-align: center;
+        line-height: 11px;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 300;
+    
+    }
+    #personal__headinfo{
+        display:flex;
+        border-radius:5px;
+    
+    }
+    .header__info{
+        display:flex;
+        border-radius:5px;
+    
+    }
+    .info{
+        width:80%;
+        margin:auto;
+    }
+    .info > h1{
+        font-size: 36px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .header__img{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        gap:1px;
+        text-align: center;
+        line-height: 11px;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 300;
+    
+    }
+    #personal__headinfo{
+        display:flex;
+        border-radius:5px;
+    
+    }
+    .header__info{
+        display:flex;
+        border-radius:5px;
+    
+    }
+    .info{
+        width:95%;
+        margin:auto;
+    }
+    .info > h1{
+        font-size: 24px;
+    }
+    #fname{
+        border-radius:5px;
+        width: 47%;
+        height: 50px;
+        margin-right:calc(100% - 95%);
+        padding-left:10px;
+        font-size: 14px;
+        float:left;
+    }
+    #lname{
+        border-radius:5px;
+        width: 47%;
+        height: 50px;
+        border: 1px solid #DDDDDD; 
+        padding-left:10px;
+        font-size: 14px;
+        float:right;
+    }
+    .form__one .finance-form-elem-container >input{
+        height: 50px;
+        font-size: 14px;
+        border-radius:5px;
+        padding-left:10px;
+    }
+    .header__image img{
+        width:15px;
+        height:15px;
+        margin:auto;
+        margin-bottom:5px;
+    }
+    .header__image{
+        justify-content: center; 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:5px;
+        font-size: 8px;
+        padding:10px 10px;
+        text-align:center;
+    }
+}

@@ -1,0 +1,468 @@
+.header-wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    height:600px;
+
+}
+.left-section, .right-section{
+    width: 100%;
+}
+.right-section{
+    border-radius: 20px 0 0 20px;
+}
+.header-wrapper .right-section{
+    height:100% !important;
+}
+.left-section{
+    /* padding-top: 30px; */
+}
+h1{
+    font-size:35px;
+    font-family:'Cera Pro';
+}
+.product-card-container{
+    width:85%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+}
+.product-card{
+    width:330px;
+    height:430px;
+    margin:20px;
+    border-radius:10px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.68);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.68);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.68);
+}
+.price-type{
+    display:inline-block;
+    width:100%;
+    font-size:10px;
+    color:#282828;
+    line-height:10px;
+}
+.down-payment{
+    font-family:'Cera Medium' !important;
+    font-size:22px !important;
+}
+.price-type.down-payment{
+    font-family:'Cera Medium';
+    font-size:10px !important;
+}
+.price-type.actual-price{
+    font-family:'Cera Pro';
+}
+.left-section h1{
+    font-family: 'Cera Pro';
+    color: #000;
+    /* justify-content: center; */
+    white-space: nowrap;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 63px;
+}
+.left-section .text-slider ul li > p{
+    padding:0 80px;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    color: #282828;
+    margin-top:20px;
+}
+.form-section{
+    margin-left: 20px;
+    margin-top:80px;
+}
+.section{
+    width:100%;
+    display:inline-block;
+    padding:50px 0;
+}
+.section-inner{
+    width:80%;
+    margin:auto;
+}
+
+.panel-name{
+    font-family:'Cera Bold';
+    color:#414042;
+    font-size:30px;
+    margin-bottom:20px;
+}
+.panel-head{
+    font-family:'Cera Medium';
+    color:#414042;
+    font-size:26px;
+    margin-bottom:20px;
+}
+.about-pockets{
+    width:100%;
+    margin-bottom:30px;
+    font-family:'Cera Pro';
+    font-size:15px;
+    line-height:25px;
+}
+.search-button{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 86%;
+    background: #64318A;
+    color: #fff;
+    border: none;
+    padding:15px;
+    gap:1rem;
+    margin-left:18px;
+    text-decoration: none;
+    margin-top: 60px;
+
+}
+.grid-box-3{
+    width: 90%;
+    margin: 50px auto;
+    display:grid;
+    gap:2rem;
+}
+.section-word{
+    padding-top:70px;
+    font-family:'Cera Pro';
+}
+.link-section{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap:2rem;
+}
+
+.get-started, .see-faqs{
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    border: 1px solid #64318A;
+
+}
+.get-started{
+    background: #64318A;
+    color: #fff;
+}
+.text-slider{
+    width:600px;
+}
+.partner-logo-container{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    margin:50px 0;
+}
+.partner-logo-item{
+    width:20%;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+}
+.partner-logo-item img{
+    width:130px;
+    height:auto;
+    object-fit:contain;
+}
+.partner-wrapper{
+    width:100%;
+    margin:150px 0;
+}
+.large-txt-result{
+    width:100%;
+    font-family:'Cera Bold';
+    font-size:50px;
+    color:green;
+}
+.small-txt-result{
+    width:100%;
+    font-family:'Cera Pro';
+    font-size:20px;
+    color:#282828;
+}
+.result-container{
+    width:90%;
+    margin:50px auto 400px auto;
+}
+.home-faq-btn{
+    width:300px;
+    line-height:50px;
+    margin:40px auto;
+    border-radius:5px;
+    text-align:center;
+}
+.home-faq-btn a{
+    display:block;
+    text-decoration:none;
+    color:#FFF;
+    font-family:'Cera Medium';
+    border-radius:5px;
+    background:#64318A;
+}
+.home-faq-btn a:hover{
+    opacity:.85;
+}
+.booking-overlay{
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.25);
+    position:fixed;
+    overflow:hidden;
+    right:0;
+    top:0;
+    z-index:9999999999999999999999999999999;
+    display:none;
+}
+.inspection-form-box{
+    width:400px;
+    height:400px;
+    padding:30px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background:#FFF;
+    border-radius:10px;
+}
+.popup-head{
+    width:100%;
+    font-family:'Cera Medium';
+    font-size:25px;
+    color:#282828;
+    text-align:center;
+    display:inline-block;
+    margin-bottom:20px;
+}
+.close-popup{
+    width:25px;
+    line-height:25px;
+    text-align:center;
+    border-radius:50%;
+    background:#FFF;
+    color:#F00;
+    position:absolute;
+    top:-15px;
+    right:-15px;
+    cursor:pointer;
+    font-family:'Cera Pro';
+}
+.popup-label{
+    width:100%;
+    display:inline-block;
+    margin-bottom:5px;
+    color:#282828;
+    font-family:'Cera Pro';
+    text-align:left;
+}
+.popup-field-container{
+    width:100%;
+    display:inline-block;
+    margin-bottom:20px;
+    position:relative;
+}
+.popup-field-container .time-div{
+    width:60%;
+    margin-right:5%;
+    float:left;
+    display:inline-block;
+}
+.popup-field-container .period-div{
+    width:25%;
+    float:left;
+    display:inline-block;
+}
+.inspection-booking-btn{
+    width:100%;
+    line-height:50px;
+    text-align:center;
+    color:#FFF;
+    border-radius:5px;
+    border:0;
+    background:#64318A;
+    cursor:pointer;
+}
+.form-report{
+    width:100%;
+    border-radius:5px;
+    line-height:30px;
+    font-size:13px;
+    text-align:left;
+    padding-left:10px;
+    display:none;
+    font-family:'Cera Pro';
+}
+@media screen and (min-width:515px){
+    .grid-box-3{
+        grid-template-columns: 1fr 1fr;
+        gap:1rem;
+        width: 98%;
+        padding: 10px;
+    }
+}
+@media screen and (min-width:1024px){
+    .grid-box-3{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width:1280px){
+    .grid-box-3{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:4rem;
+        width: 85%;
+    }
+}
+@media screen and (min-width:768px){
+    
+    .header-wrapper{
+        grid-template-columns:1fr 1fr;
+        flex-direction: column;
+        height: 600px;
+        margin-bottom:100px;
+    }
+    .left-section{
+        padding-top: 70px;
+    }
+    .left-section h1{
+        font-family: 'Cera Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 70px;
+        display:flex;
+        align-items:center;
+        padding:0 80px;
+    }
+    .left-section > p{
+        padding:0 90px;
+        font-family: 'Cera Pro';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 23px;
+    }
+    .link-section{
+        flex-direction: row;
+    }
+    .form-section{
+        padding:0px 40px;
+
+    }
+    .search-button{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        width: 30%;
+        background: #64318A;
+        color: #fff;
+        border: none;
+        padding:15px;
+        gap:1rem;
+        margin-left: 20px;
+        margin-top: 40px;
+        cursor:pointer;
+    }
+    .get-started, .see-faqs{
+        padding: 15px 40px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-family: 'Cera Pro';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .header-wrapper .right-section{
+        height:0 !important;
+    }
+    h1{
+        font-size:22px;
+        line-height:35px;
+    }
+    .left-section{
+        padding-top: 0px;
+        background:#fff;
+
+    }
+    .form-section{
+        padding:0px;
+        margin-left: 0px;
+        margin-top:40px;
+
+    }
+    .product-card-container{
+        width:85%;
+        flex-direction:column;
+    }
+    .product-card{
+        width:100%;
+        height:530px;
+        margin:10px 0 20px 0;
+        border-radius:10px;
+    }
+    .partner-logo-container{
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        margin:50px 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .partner-logo-item{
+        width:200px;
+        padding:0;
+        margin-right:20px;
+    }
+    .partner-logo-item:last-child{
+        margin-right:0;
+    }
+    .text-slider{
+        width:100%;
+    }
+    .left-section .text-slider ul li > p{
+        padding:0 20px;
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .partner-wrapper{
+        margin:50px 0;
+    }
+    .large-txt-result{
+        font-size:25px;
+    }
+    .small-txt-result{
+        font-size:16px;
+    }
+    .result-container{
+        width:95%;
+        margin:30px auto 200px auto;
+    }
+    .home-faq-btn{
+        width:200px;
+        line-height:40px;
+    }
+    .home-faq-btn a{
+        font-size:14px;
+    }
+}

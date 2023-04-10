@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'Cera Pro';
+	src:url('../fonts/cera-pro/CeraProLight.otf');
+}
+@font-face {
+	font-family: 'Cera Bold';
+	src:url('../fonts/cera-pro/CeraProBold.otf');
+}
+@font-face {
+	font-family: 'Cera Medium';
+	src:url('../fonts/cera-pro/CeraProMedium.otf');
+}
+html, body{
+    margin:0;
+    padding:0;
+    position:relative;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
