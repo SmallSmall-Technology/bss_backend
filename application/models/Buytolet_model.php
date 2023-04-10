@@ -1757,5 +1757,59 @@ class Buytolet_model extends CI_Model {
 	    return $query->result_array();
 
 	}
-	    
+
+	// Get Daily Notification Count
+
+	public function getDailyNotificationsCount(){
+    	// Get the current date
+    	$today = date('Y-m-d');
+
+    	// Query to fetch the count of daily notifications
+    	$this->db->select('COUNT(id) as count');
+    	$this->db->from('buytolet_notification_tbl');
+    	$this->db->where('DATE(entry_date)', $today);
+    	$query = $this->db->get();
+
+    	// Check if query is successful
+    	if ($query->num_rows() > 0) {
+    	    $row = $query->row();
+    	    $notificationCount = $row->count;
+    	    return $notificationCount;
+			// echo json_encode(['notificationCount' => $notificationCount]);
+    	} else {
+    	    return 0;
+    	}
+	}
+
+	// To get data from the notification table
+	public function notification(){
+
+		$this->db->select('*');
+
+		$this->db->from('buytolet_notification_tbl');
+
+		$this->db->order_by('entry_date', 'desc');
+
+		$this->db->limit(5);
+				
+		$query = $this->db->get();
+
+		return $query->result_array();
+
+	}
+
+	// To save data message to notification table
+	public function insertNotification($subject, $message, $userID, $name){
+
+		$this->name = $name;
+
+		$this->subject = $subject;
+		
+		$this->details = $message;
+		
+		$this->userID = $userID;
+		
+		return $this->db->insert('buytolet_notification_tbl', $this);			
+	}
+
 }
