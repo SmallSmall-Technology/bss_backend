@@ -1725,6 +1725,12 @@ class Buytolet extends CI_Controller {
 			    
 			    $data['confirmationLink'] = base_url().'activate/'.$confirmationCode;
 
+				$messageR = "Successful Registration";
+
+				// Send Data to notification DB when mail is being sent to notify user on dashboard
+				$subject = "SmallSmall Confirmation";
+				$notificationDataSentToDb = $this->buytolet_model->insertNotification($subject, $messageR, $userID, $fname);
+
 				//Successful insert then send email to user				
 				$this->email->from('donotreply@buy.smallsmall.com', 'SmallSmall');
 
@@ -1873,7 +1879,13 @@ class Buytolet extends CI_Controller {
 		if($res){
 			
     		$property = $this->buytolet_model->getProp($propID);
-    				
+
+			// To send notification mail to db for New Inspection Request
+
+			$subject = "New Inspection Request!";
+			$message = "This is to notify you that you have been schedule for inspection on '$inspPeriod'";
+			$notification_data_sent_to_db = $this->buytolet_model->insertNotification($subject, $message, $userID, $fname);
+			
     		$data['name'] = $fname.' '.$lname;
     				
     		$data['propName'] = $property['property_name'];
@@ -2982,22 +2994,34 @@ class Buytolet extends CI_Controller {
 		    
 		    //Send email and attach offer letter to user
 		    
-		    $email_result = 0;
+		    $notificationRes = 0;
+			$email_result = 0;
+			$subject = 'Property Offer Update';
 		    
 		    $property_details = $prop['property_name'].''.$prop['address'].', '.$prop['city'].' '.$prop['propState'];
 		    
 		    if($this->input->post('plan') == 'Outright'){
+
+				$message = '<p>Your outright property details” '.$prop['property_name'].''.$prop['address'].', '.$prop['city'].' '.$prop['propState'].'”.</p>
+    			BuySmallsmall is a real estate investment platform that is making property investment easy and accessible to everyone, our platform allows you to own a small portfolio and grow it by earning passive income and benefit from capital appreciation.';
 		        
 		        $email_result = $this->outright_offer_letter($ref_id, $email, $phone, $prop['property_name'], $name, $prop['address'], $prop['city'], $prop['propState'], $cost, $payable, $prop['bed'], $prop['type']);
-		        
+		        // Send notification message to user at dashboard
+				$notificationRes = $this-> insertNotification($subject, $message, $userID, $name);
+
 		    }else if($this->input->post('plan') == 'Financing'){
 		        
 		        $request = $this->buytolet_model->getRequest($ref_id);
 		        
 		        $transaction_fee = $request['amount'] * 0.04;
+
+				$message = '<p>Your finance offer” '.$prop['property_name'].''.$prop['address'].', '.$prop['city'].' '.$prop['propState'].', '.$request['finance_balance'].'”.</p>
+    			BuySmallsmall is a real estate investment platform that is making property investment easy and accessible to everyone, our platform allows you to own a small portfolio and grow it by earning passive income and benefit from capital appreciation.';
 		        
 		        $email_result = $this->finance_offer_letter($ref_id, $email, $phone, $prop['property_name'], $name, $prop['address'], $prop['city'], $prop['propState'], $cost, $payable, $prop['bed'], $prop['type'], $request['finance_balance'], $request['payable'], $request['amount'], $request['payment_period'], $transaction_fee);
-		        
+		        // Send notification message to user at dashboard
+				$notificationRes = $this-> insertNotification($subject, $message, $userID, $name);
+
 		    }else if($this->input->post('plan') == 'Co-own'){
 		        
 		        $request = $this->buytolet_model->getRequest($ref_id);
@@ -3009,7 +3033,10 @@ class Buytolet extends CI_Controller {
     			
     			//Send notification email to buyer
         		$email_res = $this->notification_letter($email, $message, $name);
-    			
+
+				// Send notification message to user at dashboard
+				$notificationRes = $this-> insertNotification($subject, $message, $userID, $name);
+	
     			if($request['purchase_beneficiary'] == 'Self'){
         			
         			$user_certificate = $this->shares_certificate($userID,  $request['refID'], $name, $email, $request['unit_amount'], $property_details, $message, $prop['hold_period'], $prop['maturity_date']);
@@ -3030,6 +3057,10 @@ class Buytolet extends CI_Controller {
                         
                         $certificate = $this->shares_certificate($beneficiary[$i]['receiverID'],  $beneficiary[$i]['requestID'], $name, $beneficiary[$i]['email'], $beneficiary[$i]['no_of_units'], $property_details, $message, $prop['hold_period'], $prop['maturity_date']);
                         
+						// Send notification message to user at dashboard
+						$notificationRes = $this-> insertNotification($subject, $message, $userID, $name);
+
+
                         if(!empty($certificate)){
                             //Update shares certificate folder
                             $this->buytolet_model->updateSharesCertificateFieldB($certificate['filename'], $beneficiary[$i]['requestID'], $beneficiary[$i]['receiverID']);
