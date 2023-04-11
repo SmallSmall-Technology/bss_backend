@@ -118,12 +118,13 @@
           </li>
           <li class="nav-item d-flex align-items-center">
             <a class="nav-link p-0" href="#" tabindex="-1" aria-disabled="true">
-              <div class="menu-logo mr-2">
+              <div class="menu-logo mr-2 position-relative">
+                <div class="notification-circle d-md-flex d-none justify-content-center align-items-center notificationCount"></div>
                 <img class="img-fluid" src="<?php echo base_url(); ?>assets/user-assets/images/inbox-icon.svg" alt="">
               </div>
             </a>
           </li>
-          <li class="nav-item d-flex align-items-center mr-4 <?php echo ($profile_title == 'Messages')? 'dashboard-active' : '' ; ?>">
+          <li class="nav-item d-flex align-items-center mr-4 <?php echo ($profile_title == 'Notification')? 'dashboard-active' : '' ; ?>">
             <div class="menu-text">
               <a href="<?php echo base_url('user/notification'); ?>" class=" text-dark" style="text-decoration: none;">Notification</a>
             </div>
@@ -271,7 +272,6 @@
             </a>
           </p>
         </div>
-
 
       </div>
     </nav>
