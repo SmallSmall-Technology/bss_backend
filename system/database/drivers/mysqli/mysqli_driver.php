@@ -304,12 +304,7 @@ class CI_DB_mysqli_driver extends CI_DB {
 	 */
 	protected function _execute($sql)
 	{
-		/** Error Todo
-		 * Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'rentsmallsmall_furnisure_buytolet_database.b.id' which is not functionally 
-		 * dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-		 */
-
-		// return $this->conn_id->query($this->_prep_query($sql));
+		return $this->conn_id->query($this->_prep_query($sql));
 	}
 
 	// --------------------------------------------------------------------

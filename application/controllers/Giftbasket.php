@@ -23,6 +23,10 @@ class Giftbasket extends CI_Controller {
 			redirect( base_url()."login" ,'refresh');
 
 		}
+
+		$result = 'error';
+
+		$msg = '';
 		
 		$data['user_id'] = $this->session->userdata('userID');
 		
@@ -41,17 +45,22 @@ class Giftbasket extends CI_Controller {
 		    
 		    //Update request table
 		    if($this->buytolet_model->update_request($data['request_id'], $remaining_shares)){
-		        echo 1;
+
+		        $result = 'success';
+
 		    }else{
-		        echo 0;
-		    }
-		    
+
+		        $msg = 'Unable to update table';
+
+		    }		    
 		    
 		}else{
 		    
-		    echo 0;
+		    $msg = 'Unable to insert into gift basket';
 		    
 		}
+
+		echo json_encode(array("result" => $result, "msg" => $msg));
 		
 	}
 	

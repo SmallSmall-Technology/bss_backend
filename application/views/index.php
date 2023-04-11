@@ -1,4 +1,4 @@
-<?php $CI =& get_instance(); ?>
+
 	<!-- middle/main section starts here -->
 	<section>
     	<header class="header-wrapper">
@@ -29,7 +29,7 @@
     							<option value="5">Co-ownership</option>
 							</select>
 						</div>
-
+					
 						<div class="custom-select">
 							<select>
 								<option value="0">Location</option>
@@ -257,7 +257,7 @@
 											<span>Shares remaining</span>
 											<h3><?php //echo number_format($pool_value['available_units']); ?></h3>
 										</div>--->
-										<?php $asset_1 = ((($pool_value['asset_appreciation_1'] / 100) * $pool_value['marketValue']) + $pool_value['marketValue']); ?>
+										<?php //$asset_1 = ((($pool_value['asset_appreciation_1'] / 100) * $pool_value['marketValue']) + $pool_value['marketValue']); ?>
 										<div>
 											<span>Returns <div class="tooltip"><i class="fa fa-info"></i><span class="propstooltiptext">Rent Return plus Capital Appreciation Return for the entire hold period.</span></div></span>
 											<h3><?php echo $returns; ?>%</h3>
@@ -311,11 +311,11 @@
 										
 										<div>
 											<span>Ann. return <div class="tooltip"><i class="fa fa-info"></i><span class="propstooltiptext">Annualized return.</span></div></span>
-											<h3><?php echo number_format((pow((($asset_1 + $value['expected_rent']) / $value['marketValue']), 1) - 1) * 100); ?>%</h3>
+											<h3><?php //echo number_format((pow((($asset_1 + $value['expected_rent']) / $value['marketValue']), 1) - 1) * 100); ?>%</h3>
 										</div>
 										<div>
 											<span>Appreciation</span>
-											<h3><?php $asset_1 = ((($value['asset_appreciation_1'] / 100) * $value['marketValue']) + $value['marketValue']); echo $value['asset_appreciation_1']; ?>%</h3>
+											<h3><?php //$asset_1 = ((($value['asset_appreciation_1'] / 100) * $value['marketValue']) + $value['marketValue']); echo $value['asset_appreciation_1']; ?>%</h3>
 										</div>
 									</div>
 								</div>
@@ -351,7 +351,7 @@
 									<h3 class="down-payment"><span style="font-family:helvetica;">&#x20A6;</span><?php echo number_format($value['price'] * 0.40); ?></h3>
 									<span class="price-type actual-price">Property price</span>
 									<h3><span style="font-family:helvetica;">&#x20A6;</span><?php echo number_format($value['price']); ?></h3>
-									<p><?php echo $value['property_name']; ?>. <?php echo $value['propState']; ?></p>
+									<p><?php echo $value['property_name']; ?>. <?php echo @$value['propState']; ?></p>
 									<ul>
 										<li style='list-style:none'>&bullet; <?php echo $value['bed']; ?> bed</li>
 										<li>&bullet; <?php echo $value['bath']; ?> bathroom</li>
@@ -364,12 +364,13 @@
 										</div>
 										
 										<div>
+											<?php //$asset_1 = ((($value['asset_appreciation_1'] / 100) * $value['marketValue']) + $value['marketValue']); echo $value['asset_appreciation_1'] ?>
 											<span>Ann. return <div class="tooltip"><i class="fa fa-info"></i><span class="propstooltiptext">Annualized return.</span></div></span>
-											<h3><?php echo number_format((pow((($asset_1 + $value['expected_rent']) / $value['marketValue']), 1) - 1) * 100); ?>%</h3>
+											<h3><?php //echo number_format((pow((($asset_1 + $value['expected_rent']) / $value['marketValue']), 1) - 1) * 100); ?>%</h3>
 										</div>
 										<div>
 											<span>Appreciation</span>
-											<h3><?php $asset_1 = ((($value['asset_appreciation_1'] / 100) * $value['marketValue']) + $value['marketValue']); echo $value['asset_appreciation_1']; ?>%</h3>
+											<h3><?php //$asset_1 = ((($value['asset_appreciation_1'] / 100) * $value['marketValue']) + $value['marketValue']); echo $value['asset_appreciation_1']; ?>%</h3>
 										</div>
 									</div>
 								</div>
@@ -461,6 +462,4 @@
     		});
         });
   </script>
-  <script>
-      amplitude.getInstance().logEvent('Homepage');
-  </script>
+  

@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/bootstrap-css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/bootstrap-css/bootstrap.min.css" crossorigin="anonymous" />
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,9 +16,7 @@
     rel="stylesheet" />
 
   <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link href="<?php echo base_url(); ?>assets/user-assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
   <link href="<?php echo base_url(); ?>assets/user-assets/fontawesome/css/brands.css" rel="stylesheet" />
@@ -33,9 +30,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/giftBasket.css" />
   <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
   <script src="//run.louassist.com/v2.5.1-m?id=965141804549"></script>
-  <script>
-      LOU.identify(<?php echo $userID ?>,{company: "Buy Small Small", permissions : 'user', plan: 'Investor'})
-  </script>
+ 
 
   <title><?php echo $title; ?></title>
 </head>

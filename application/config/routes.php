@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 |
 
-// |	$route['default_controller'] = 'welcome';
+|	$route['default_controller'] = 'welcome';
 
 |
 
@@ -97,6 +97,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 
 */
+
+$route['referral/(:any)'] = 'buytolet/signup_by_referral/$1';
+
+$route['test/check-worth'] = 'buytolet/getPropertyWorth';
+
 $route['test/shares-certificate'] = 'buytolet/shares_certificate';
 
 $route['user/send-gift'] = 'user/send_gift';
@@ -263,8 +268,6 @@ $route['about-us'] = 'buytolet/about_us';
 $route['home-test'] = 'buytolet/home_test';
 
 $route['default_controller'] = 'buytolet';
-// $route['default_controller'] = 'welcome';
-
 
 $route['404_override'] = '';
 

@@ -1,109 +1,109 @@
-.current-booking {
-  background: #F6F7F8;
-  border-radius: 10px;
-  padding: 4em;
-}
-
-.subscription-btn {
-  background: #222224;
-  border-radius: 4px;
-  min-width: 211px;
-  color: #ffffff
-    /* padding: 2em; */
-}
-
-
-.wallet-btn {
-  background: #EDEDEF;
-  border-radius: 4px;
-
-}
-
-
-.unit-container {
-  background: #e6ebf1;
-  border-radius: 20px;
-  padding: 0.1em;
-  font-size: 14px;
-  width: 100px;
-  justify-content: space-between;
-}
-
-.unit-container__naira,
-.unit-container__percent {
-  /* padding: 1em; */
-  border-radius: 20px;
-  width: 50%;
-  text-align: center;
-  font-weight: lighter;
-  cursor: pointer;
-  color: black
-}
-
-
-
-.set-unit-container {
-  background-color: #64318A;
-  color: #ffffff
-}
-
-
-.table td, .table th, .table thead th {
-  border: 0;
-}
-
-.certificate-item {
-  max-width: 33.3%;
-}
-
-.certificate-item img {
-  max-width: 80px;
-}
-
-.certificate-item a {
-  max-width: 138px;
-}
-
-.certificate-item:not(:last-child, :nth-child(3n)) {
-  border-right: 1px solid #CCCCD3 !important;
-}
-
-/*****MEDIA QUERY****/
-
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (max-width: 480px) {
-  .certificate-item {
-    max-width: 100%;
-    margin-bottom: 2em;
-    border-right: 0px !important;
-    padding-bottom: 3em;
-  }
-
-  .certificate-item:not(:last-child) {
-    border-bottom: 1px solid #CCCCD3;
-  }
-
-  .certificate-item p {
-    text-align: center;
-  }
-
-  .certificate-item:not(:last-child, :nth-child(3n)) {
-    border-right: 0px !important
-  }
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (min-width: 576px) {}
-
-/* Medium devices (tablets, 768px and up)*/
-@media screen and (max-width: 768px) {}
-
-@media screen and (min-width: 768px) {}
-
-@media (max-width: 992px) {}
-
-/* Large devices (desktops, 992px and up)*/
-@media screen and (992px <=width <=1024px) {}
-
-/* Extra large devices (large desktops, 1200px and up)*/
+.current-booking {
+  background: #F6F7F8;
+  border-radius: 10px;
+  padding: 4em;
+}
+
+.subscription-btn {
+  background: #222224;
+  border-radius: 4px;
+  min-width: 211px;
+  color: #ffffff
+    /* padding: 2em; */
+}
+
+
+.wallet-btn {
+  background: #EDEDEF;
+  border-radius: 4px;
+
+}
+
+
+.unit-container {
+  background: #e6ebf1;
+  border-radius: 20px;
+  padding: 0.1em;
+  font-size: 14px;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.unit-container__naira,
+.unit-container__percent {
+  /* padding: 1em; */
+  border-radius: 20px;
+  width: 50%;
+  text-align: center;
+  font-weight: lighter;
+  cursor: pointer;
+  color: black
+}
+
+
+
+.set-unit-container {
+  background-color: #64318A;
+  color: #ffffff
+}
+
+
+.table td, .table th, .table thead th {
+  border: 0;
+}
+
+.certificate-item {
+  max-width: 33.3%;
+}
+
+.certificate-item img {
+  max-width: 80px;
+}
+
+.certificate-item a {
+  max-width: 138px;
+}
+
+.certificate-item:not(:last-child, :nth-child(3n)) {
+  border-right: 1px solid #CCCCD3 !important;
+}
+
+/*****MEDIA QUERY****/
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 480px) {
+  .certificate-item {
+    max-width: 100%;
+    margin-bottom: 2em;
+    border-right: 0px !important;
+    padding-bottom: 3em;
+  }
+
+  .certificate-item:not(:last-child) {
+    border-bottom: 1px solid #CCCCD3;
+  }
+
+  .certificate-item p {
+    text-align: center;
+  }
+
+  .certificate-item:not(:last-child, :nth-child(3n)) {
+    border-right: 0px !important
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up)*/
+@media screen and (max-width: 768px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media (max-width: 992px) {}
+
+/* Large devices (desktops, 992px and up)*/
+@media screen and (992px <=width <=1024px) {}
+
+/* Extra large devices (large desktops, 1200px and up)*/
 @media screen and (min-width: 1200px) {}

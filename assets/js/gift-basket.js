@@ -36,20 +36,20 @@ $(document).ready(function(){
     		url: baseUrl+"giftbasket/move_to_gift_bag",
     
     		type: "POST",
-    
-    		async: true,
+
+		    dataType : "json",
     
     		data: data,
     
     		success: function(data) {
     
-    			if(data == 1){
+    			if(data.result == 'success'){
     				
     				location.reload();
     				
     			}else{
     			    
-    			    alert('Error sending gift');
+    			    alert('Error: '+data.msg);
     			    
     			    $('#giftBut').html('Send gift');
     

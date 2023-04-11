@@ -1,6 +1,6 @@
 // JavaScript Document
 
-var baseUrl = "https://buy.smallsmall.com/";
+var baseUrl = "https://localhost/buysmallsmall/";
 
 function isEmail(email) {
 
@@ -52,11 +52,10 @@ $('#loginForm').submit(function(e){
 
 	var password = $.trim($('#password').val());
 
-	var current_page = $('#current-page').val();
+	//var current_page = $('#current-page').val();
 	
-	/*if(current_page == ''){
-		current_page = "https//www.buy2let.ng";   
-	}*/
+	var current_page = "https//localhost/buysmallsmall/";   
+	
 	var filteredList = [];	
 
 	//Check for empty fields

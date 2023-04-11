@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/form-extra.css">	
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/form-register.css">
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-	
-
 </head>
 
 <body>
@@ -76,39 +74,7 @@
 									<?php } ?>
 								</select>
 							</div>
-						</div>
-						<div class="single-span-col-input">
-						    <div class="textInput-box">
-								<select class="minimal income-range verify-txt" id="income-range">
-                                    <option value="">Income range</option>
-                                    <option value="500000">Under N500,000</option>
-								<option value="1000000">N500,000 - N1,000,000</option>
-								<option value="2500000">N1,100,000 - N2,500,000</option>
-								<option value="5000000">N2,600,000 - N5,000,000</option>
-								<option value="7500000">N5,100,000 - N7,500,000</option>
-								<option value="10000000">N7,600,000 - N10,000,000</option>
-								<option value="15000000">N10,100,000 - N15,000,000</option>
-								<option value="20000000">N15,100,000 - N20,000,000</option>
-								<option value="30000000">N21,000,000 - N30,000,000</option>
-								<option value="40000000">N31,000,000 - N40,000,000</option>
-								<option value="50000000">N41,000,000 - N50,000,000</option>
-								<option value="51000000">N51,000,000 + </option>
-                                </select>
-							</div>
-						</div>
-						<div class="single-span-col-input">
-							<div class="textInput-box">
-								<input placeholder="Occupation" id="occupation" class="occupation verify-txt" type="text">
-							</div>
-						</div>
-						<div class="single-span-col-input">
-							<div class="textInput-box">
-								<input class="position verify-txt" id="position" placeholder="Position" type="text">
-							</div>
-						</div>
-						<div class="single-span-col-input">
-						<textarea class="text-area address"	rows="8" cols="4" placeholder="Address"></textarea>
-						</div>
+						</div>						
 						<div class="single-span-col-input">
 							<a class="button next">Next</a>
 						</div>
@@ -132,97 +98,40 @@
 						</div>
 						<div class="form-report">Error signing you up</div>
 						
-						<div class="single-span-col-input">
-							<select class="minimal accredited-investor verify-txt">
-								<option value="">Are you an accredited investor?</option>
-								<option value="Yes">Yes</option>
-								<option value="No">No</option>
-							</select>
-						</div>
-
-						<div class="single-span-col-input">
-							<select class="minimal investment-experience verify-txt">
-								<option>Whats your exeperience with rental property investment?</option>
-								<option value="I am just getting started">I am just getting started</option>
-								<option value="I have purchased investment property before">I have purchased investment property before</option>
-							</select>
-						</div>
-
-						<div class="single-span-col-input">
-							<select class="minimal investment-goal verify-txt">
-							    <option value="">What is your investment goal? Please pick your primary goal.</option>
-								<option value="Earn passive income">Earn passive income</option>
-								<option value="Diversify my investment portfolio">Diversify my investment portfolio</option>
-								<option value="Profit from a market with strong appreciation potential">Profit from a market with strong appreciation potential</option>
-								<option value="Have a real asset in my name">Have a real asset in my name</option>
-							</select>
-						</div>
-
-						<div class="single-span-col-input">
-							<select class="minimal investment-capital verify-txt">
-							    <option value="">How much are you looking to invest?</option>
-								<option value="100000">Less than N100,000</option>
-								<option value="200000">N101,000 - N200,000</option>
-								<option value="400000">N201,000 - N400,000</option>
-								<option value="600000">N401,000 - N600,000</option>
-								<option value="800000">N601,000 - N800,000</option>
-								<option value="1000000">N801,000 - N1,000,000</option>
-								<option value="1400000">N1,100,000 - N1,400,000</option>
-								<option value="1700000">N1,401,000 - N1,700,000</option>
-								<option value="2000000">N1,701,000 - N2,000,000</option>
-								<option value="2500000">N2,100,000 - N2,500,000</option>
-								<option value="3000000">N2,501,000 - N3,000,000</option>
-								<option value="3100000">N3,100,000 + </option>
-							</select>
-						</div>
-
-						<div class="single-span-col-input">
-							<select class="minimal financing-choice verify-txt">
-							    <option value="">Payment choice</option>
-								<option selected="selected" value="Outright cash">Outright cash</option>
-								<option value="BuySmallSmall Financing">BuySmallSmall Financing</option>
-								<option value="Mortgage">Mortgage</option>
-							</select>
-						</div>
-
-						<div class="single-span-col-input">
-							<select class="minimal investment-period verify-txt">
-								<option value="">How long do you plan to hold this investment before selling?</option>
-								<option value="5">Less than 5 years</option>
-								<option value="5 - 10">5 - 10 years</option>
-								<option value="10 - 20">10 - 20 years</option>
-								<option value="Over 20 years">Over 20 years</option>
-								<option value="Indefinitely">Indefinitely</option>
-								<option value="Undecided">Undecided</option>
-								<option value="Depends on market conditions">Depends on market conditions</option>
-							</select>
-						</div>
-
-						<div class="single-span-col-input">
-							<select class="minimal purchase-plan verify-txt">
-							    <option value="">How soon would you like to make the purchase?</option>
-								<option value="Within 5 working days">Within 5 working days</option>
-								<option value="Next 10 to 30 days">Next 10 to 30 days</option>
-								<option value="Less than 30 days">Less than 30 days</option>
-								<option value="1 - 3 months">1 - 3 months</option>
-								<option value="3 - 6 months">3 - 6 months</option>
-								<option value="More than 6 months">More than 6 months</option>
-							</select>
-						</div>
-					
-
-						<div class="single-span-col-input">
-							<div class="textInput-box">
-								<input class="preferred-location-1 verify-txt txt-f" id="preferred-location-1" placeholder="Preferred Location 1" type="text">
+						<div class="single-span-col-input all-fields">
+						    <div class="textInput-box">
+								<select class="minimal income-range verify-txt" id="income-range">
+                                    <option value="">Income range</option>
+                                    <option value="500000">Under N500,000</option>
+									<option value="1000000">N500,000 - N1,000,000</option>
+									<option value="2500000">N1,100,000 - N2,500,000</option>
+									<option value="5000000">N2,600,000 - N5,000,000</option>
+									<option value="7500000">N5,100,000 - N7,500,000</option>
+									<option value="10000000">N7,600,000 - N10,000,000</option>
+									<option value="15000000">N10,100,000 - N15,000,000</option>
+									<option value="20000000">N15,100,000 - N20,000,000</option>
+									<option value="30000000">N21,000,000 - N30,000,000</option>
+									<option value="40000000">N31,000,000 - N40,000,000</option>
+									<option value="50000000">N41,000,000 - N50,000,000</option>
+									<option value="51000000">N51,000,000 + </option>
+                                </select>
 							</div>
 						</div>
-						<div class="single-span-col-input">
+						<div class="single-span-col-input all-fields">
 							<div class="textInput-box">
-								<input class="preferred-location-2 verify-txt txt-f" id="preferred-location-2" placeholder="Preferred Location 2" type="text">
+								<input placeholder="Occupation" id="occupation" class="occupation verify-txt" type="text">
 							</div>
 						</div>
+						<div class="single-span-col-input all-fields">
+							<div class="textInput-box">
+								<input class="position verify-txt" id="position" placeholder="Position" type="text">
+							</div>
+						</div>
+						<div class="single-span-col-input all-fields">
+							<textarea class="text-area address"	rows="4" placeholder="Address"></textarea>
+						</div>
 					
-						<div class="single-span-col-input">
+						<div class="single-span-col-input all-fields">
 							<select class="medium verify-txt minimal">
 							<option value="">How did you hear about us</option>
 							<option value="Instagram">Instagram</option>
@@ -237,13 +146,13 @@
 							</select>
 						</div>
 						
-						<div class="single-span-col-input">
+						<div class="single-span-col-input all-fields">
 							<div class="textInput-box">
-								<input class="referral-code txt-f" id="referral-code" placeholder="Referral code" type="text">
+								<input class="referral-code txt-f" id="referral-code" placeholder="Referral code" type="text" value="<?php echo ($refCode) != '' ? $refCode : ''; ?>"> 
 							</div>
 						</div>
 					
-						<div class="single-span-col-input">
+						<div class="single-span-col-input all-fields">
 						    
 							<input type="submit" class="signup-button button" value="Finish" />
 							

@@ -61,9 +61,9 @@
       <div class="col-md-5 col-12">
         <div class="d-flex justify-content-between align-items-md-baseline ">
           <a href="#" style="word-wrap: break-word; width: 90%; color: #662D91" class="d-block align-self-end "
-            id="referralLink">www.buysmallsmall.com/referral5775refJohnd</a>
+            id="referralLink"><?php echo base_url().'referral/'.$refCode; ?></a>
           <div class="d-flex flex-column" id="copy" style="cursor: pointer;">
-            <img class="img-fluid" src="assets/images/copy.svg" alt="">
+            <img class="img-fluid" src="../assets/images/copy.svg" alt="">
             <span class="d-inline-block" id="copy-text">copy</span>
           </div>
         </div>
@@ -87,3 +87,31 @@
     </div>
 
   </main>
+
+
+  <!-- Jquery js -->
+  <script src="./assets/js/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap js and Popper js -->
+  <script src="./assets/js/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/bootstrap-js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      $("#copy").click(function () {
+        navigator.clipboard.writeText($("#referralLink").text());
+        $("#copy-text").text("copied")
+        setTimeout(() => {
+          $("#copy-text").text("copy")
+        }, 1000);
+
+      });
+  
+    });
+  </script>

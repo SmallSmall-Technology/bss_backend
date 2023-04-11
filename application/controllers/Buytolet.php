@@ -533,7 +533,6 @@ class Buytolet extends CI_Controller {
 	}
 	public function signup()
 	{
-
 		if(!$this->session->has_userdata('loggedIn')){
 
 			//Check login status
@@ -553,6 +552,32 @@ class Buytolet extends CI_Controller {
 		}
 
 	}
+
+	public function signup_by_referral($ref_code)
+	{
+
+		if(!$this->session->has_userdata('loggedIn')){
+
+			//Check login status
+
+			$data['refCode'] = $ref_code;
+
+			$data['title'] = "Signup :: Buy2Let";
+
+			//$this->load->view('templates/header', $data);
+
+			$this->load->view('signup', $data);
+
+			//$this->load->view('templates/footer', $data);
+
+		}else{
+
+			redirect( base_url() ,'refresh');
+
+		}
+
+	}
+
 	public function signup_investor()
 
 	{
@@ -1270,6 +1295,7 @@ class Buytolet extends CI_Controller {
 			
 			$data['interest'] = $this->session->userdata('interest');
 		
+		
     		//Update property views
     		$views = intval($data['property']['views']) + 1;
     		
@@ -1690,25 +1716,7 @@ class Buytolet extends CI_Controller {
 		$position = $this->input->post("position");
 		
 		$address = $this->input->post("address");
-		
-		$accredited_investor = $this->input->post("accredited_investor");
-		
-		$investment_experience = $this->input->post("investment_experience");
-		
-		$investment_goal = $this->input->post("investment_goal");
-		
-		$investment_capital = $this->input->post("investment_capital");
-		
-		$financing_choice = $this->input->post("financing_choice");
-		
-		$investment_period = $this->input->post("investment_period");
-		
-		$purchase_plan = $this->input->post("purchase_plan");
-		
-		$preferred_location_1 = $this->input->post("preferred_location_1");
-		
-		$preferred_location_2 = $this->input->post("preferred_location_2");
-		
+				
 		$gender = $this->input->post("gender");
 		
 		$ref_code = $this->input->post("ref_code");
@@ -1730,21 +1738,18 @@ class Buytolet extends CI_Controller {
 		    $beneficiary = $this->buytolet_model->check_beneficiary_details($email)['userID'];
 		    
 		    $id = ($beneficiary)? $beneficiary : $this->generate_user_id(12);
-
 			//Insert details in user table
 
-			$res = $this->buytolet_model->add_user($id, $fname, $lname, $email, $phone, $password, $medium, $age, $income, $occupation, $position, $address, $gender, $accredited_investor, $investment_experience, $investment_goal, $investment_capital, $financing_choice, $investment_period, $purchase_plan, $preferred_location_1, $preferred_location_2);
+			//$res = $this->buytolet_model->add_user($id, $fname, $lname, $email, $phone, $password, $medium, $age, $income, $occupation, $position, $address, $gender, $accredited_investor, $investment_experience, $investment_goal, $investment_capital, $financing_choice, $investment_period, $purchase_plan, $preferred_location_1, $preferred_location_2);
+			$registration = $this->buytolet_model->register($id, $fname, $lname, $email, $password, $phone, $income, $confirmationCode, $medium, 'tenant', 'Buy', $rc, $gender, $user_agent['userAgent']);
 
-			if($res){
-			    
-			    $registration = $this->buytolet_model->register($id, $fname, $lname, $email, $password, $phone, $income, $confirmationCode, $medium, 'tenant', 'Buy', $rc, $gender, $user_agent['userAgent']);
+			if($registration){    
 			    
 			    $data['name'] = $lname;
 			    
 			    $data['confirmationLink'] = base_url().'activate/'.$confirmationCode;
 
-				//Successful insert then send email to user
-				
+				//Successful insert then send email to user				
 				$this->email->from('donotreply@buy.smallsmall.com', 'SmallSmall');
 
     			$this->email->to($email);
@@ -1950,7 +1955,7 @@ class Buytolet extends CI_Controller {
 		if(!empty($user)){
 			//Successful insert then send email to user
 
-			if($user['confirmation_link'] == ''){
+			if($user['confirmation'] == ''){
 
 				if($user['status'] == 'Active'){
 
@@ -2137,6 +2142,26 @@ class Buytolet extends CI_Controller {
                     }else{
                         //Generate new ID
                         $user_id = $this->generate_user_id(12);
+                        
+                        $details['userID'] =  $user_id;
+
+						$details['fname'] = $beneficiary_firstname[$i];
+
+						$details['lname'] = $beneficiary_lastname[$i];
+
+						$details['email'] = $beneficiary_email[$i];
+
+						$details['phone'] = $beneficiary_phone[$i];
+
+						$details['refcode'] = $this->session->userdata('referral_code');
+
+						$res = $this->create_user_account($details);
+
+						if($res){
+
+							//send a new user actionable message
+
+						}			
                     }
                 
                     $this->buytolet_model->insert_beneficiary_details($data['userID'], $ref, $beneficiary_firstname[$i], $beneficiary_lastname[$i], $beneficiary_email[$i], $beneficiary_phone[$i], $beneficiary_shares[$i], $beneficiary_id_path, $user_id);
@@ -3424,6 +3449,38 @@ class Buytolet extends CI_Controller {
 		}		
 
 		return $randomNumber;
+	}
+	
+	//parameter array
+	public function create_user_account($details){
+
+		$password = md5('Password@123');
+
+		$confirmationCode = md5(date('YmdHis'));
+
+		return $this->buytolet_model->create_user_account($details['id'], $details['fname'], $details['lname'], $details['email'], $password, $details['phone'], $details['refCode'], $confirmationCode);
+
+	}
+	
+	public function getPropertyWorth($user_id){
+
+		$worth = 0;
+
+		$properties = $this->buytolet_model->getAllUserCoOwnProperties($user_id);
+
+		if(count($properties) > 1){
+			
+			for($i = 0; $i < count($properties); $i++){
+
+				$worth = $worth + $properties[$i]['amount'];
+
+			}
+		}else{
+			//Return single property worth
+			$worth = $properties[0]['amount'];
+		}
+
+		return $worth;
 	}
 }
 

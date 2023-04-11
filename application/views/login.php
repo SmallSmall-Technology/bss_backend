@@ -20,7 +20,7 @@
 						<a class="forgot-password forgot-pass" >forgot password?</a>
 					</div>
 
-					<input type="hidden" class="current-page" id="current-page" value="<?php if(@$_SERVER['HTTP_REFERER']){ echo $_SERVER['HTTP_REFERER']; }/*else{ echo $this->session->userdata('page_link'); }*/ ?>" />
+					<input type="hidden" class="current-page" id="current-page" />
 
 					<button class="login-button login-submit">Login</button>
 
@@ -36,7 +36,7 @@
 						<input type="text" class="txt-f reset-username" id="reset-username" placeholder="Email" />
 					</div>
 
-					<input type="hidden" class="current-page" id="current-page" value="<?php if(@$_SERVER['HTTP_REFERER']){ echo $_SERVER['HTTP_REFERER']; }/*else{ echo $this->session->userdata('page_link'); }*/ ?>" />
+					<input type="hidden" class="current-page" id="current-page" />
 
 					<div class="login-forgot-password">
 						<a class="forgot-password login-pass">Need to login?</a>

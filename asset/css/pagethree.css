@@ -1,62 +1,62 @@
-
-.header__info{
-    border-radius:10px;
-     height: 5px;
-     width:100%; 
-     background-color: #D9D9D9;
-     border:none;
-}
-@media only screen and (max-width: 600px){
-    .header__info{
-    display:flex;
-    border-radius:5px;
-
-}
-}
-.personal__headinfo{
-    border-radius:10px;
-    background:#64318A;
-    height:5px;
-    width:100%;
-    gap:70px;
-    border:none;
-}
-@media only screen and (max-width: 600px){
-    #personal__headinfo{
-    display:flex;
-    border-radius:5px;
-
-}
-}
-/* <<<<<<Body styling>>>>>> */
-
-form > select{
-    color:#000000;
-}
-
-#persona__three{
-    font-style:normal;
-    font-family:sans-serif;
-    font-weight:500;
-    font-size:18px;
-
-    line-height:18px;
-    margin-left:19px;
-    padding-left:2%;
-    color: #282828;
-}
-select{
-    width:31.25rem;
-    height: 61px;
-    font-size: 16px;
-    font-family: 'Cera Pro';
-    margin: 10px 0;
-    border-radius:7px;
-    box-sizing:border-box;
-    border: 1px solid #DDDDDD;
-    padding-left:5%;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 20px;
-    color: #ABACB2;
-}
+
+.header__info{
+    border-radius:10px;
+     height: 5px;
+     width:100%; 
+     background-color: #D9D9D9;
+     border:none;
+}
+@media only screen and (max-width: 600px){
+    .header__info{
+    display:flex;
+    border-radius:5px;
+
+}
+}
+.personal__headinfo{
+    border-radius:10px;
+    background:#64318A;
+    height:5px;
+    width:100%;
+    gap:70px;
+    border:none;
+}
+@media only screen and (max-width: 600px){
+    #personal__headinfo{
+    display:flex;
+    border-radius:5px;
+
+}
+}
+/* <<<<<<Body styling>>>>>> */
+
+form > select{
+    color:#000000;
+}
+
+#persona__three{
+    font-style:normal;
+    font-family:sans-serif;
+    font-weight:500;
+    font-size:18px;
+
+    line-height:18px;
+    margin-left:19px;
+    padding-left:2%;
+    color: #282828;
+}
+select{
+    width:31.25rem;
+    height: 61px;
+    font-size: 16px;
+    font-family: 'Cera Pro';
+    margin: 10px 0;
+    border-radius:7px;
+    box-sizing:border-box;
+    border: 1px solid #DDDDDD;
+    padding-left:5%;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    color: #ABACB2;
+}

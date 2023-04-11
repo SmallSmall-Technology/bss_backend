@@ -187,13 +187,29 @@ class Buytolet_model extends CI_Model {
 	}
 	public function register($id, $fname, $lname, $email, $password, $phone, $income, $confirmationCode, $referral, $user_type, $interest, $rc, $gender, $user_agent){
 
-        $user_insert = array("userID" => $id, "firstName" => $fname, "lastName" => $lname, "email" => $email, "password" => $password, "phone" => $phone, "income" => $income, "referral" => $referral, "gender" => $gender, "referral_code" => $rc, "user_type" => $user_type, "interest" => $interest, "verified" => 'no', "points" => 0, "status" => 'Active', "platform" => 'Web', "user_agent" => $user_agent, "regDate" => date('Y-m-d H:i:s'));
+		$today = date('Y-m-d H:i:s');
+
+        $user_insert = array("userID" => $id, "firstName" => $fname, "lastName" => $lname, "email" => $email, "password" => $password, "phone" => $phone, "income" => $income, "referral" => $referral, "gender" => $gender, "referral_code" => $rc, "user_type" => $user_type, "interest" => $interest, "verified" => 'no', "points" => 0, "status" => 'Active', "platform" => 'Web', "user_agent" => $user_agent, "regDate" => $today);
 
         if($this->db->insert('user_tbl', $user_insert)){
 
-            $lastlog = date('Y-m-d H:i:s');
+            return $this->db->insert('login_tbl', array('email' => $email, 'password' => $password, 'userID' => $id, 'lastLogin' => $today, 'confirmation' => $confirmationCode));
+            
+        }else{
+            
+            return 0;
+        }
 
-            return $this->db->insert('login_tbl', array('email' => $email, 'password' => $password, 'userID' => $id, 'lastLogin' => $lastlog, 'confirmation' => $confirmationCode));
+    }
+	public function create_user_account($id, $fname, $lname, $email, $password, $phone, $refCode, $confirmationCode){
+
+		$today = date('Y-m-d H:i:s');
+
+        $user_insert = array("userID" => $id, "firstName" => $fname, "lastName" => $lname, "email" => $email, "password" => $password, "phone" => $phone, "income" => 0, "referral" => 'Buysmallsmall Gift', "user_type" => 'Landlord', "interest" => 'Buy', "verified" => 'no', "points" => 0, "status" => 'Active', "referred_by" =>$refCode, "regDate" => $today);
+
+        if($this->db->insert('user_tbl', $user_insert)){
+
+            return $this->db->insert('login_tbl', array('email' => $email, 'password' => $password, 'userID' => $id, 'lastLogin' => $today, 'confirmation' => $confirmationCode));
             
         }else{
             
@@ -637,7 +653,7 @@ class Buytolet_model extends CI_Model {
 		}
 	}
 	
-	public function insertCoOwnRequest($ref, $buyer_type, $payment_plan, $property_id, $cost, $userID, $payable, $balance, $mop, $payment_period, $unit_amount, $promo_code, $id_path, $statement_path, $firstname, $lastname, $email, $phone, $company_name, $position, $occupation, $income_range, $company_address, $beneficiary_type){ 
+	public function insertCoOwnRequest($ref, $buyer_type, $payment_plan, $property_id, $cost, $userID, $payable, $balance, $mop, $payment_period, $unit_amount, $promo_code, $id_path, $statement_path, $firstname, $lastname, $email, $phone, $company_name, $position, $occupation, $income_range, $company_address, $beneficiary_type, $share_condition = 0){ 
 	    
 		$this->userID = $userID;
 		
@@ -684,6 +700,8 @@ class Buytolet_model extends CI_Model {
 		$this->promo_code = $promo_code;
 		
 		$this->purchase_beneficiary = $beneficiary_type;
+
+		$this->share_condition = $share_condition;
 		
 		$this->request_date = date('Y-m-d H:i:s');
 		
@@ -1696,6 +1714,48 @@ class Buytolet_model extends CI_Model {
 	    
 	    return $this->db->insert('spent_gift_basket', $inserts);
 	    
+	}
+
+	public function check_request_shares_condition($id){
+
+		$this->db->select('share_condition');
+
+		$this->db->from('buytolet_request');
+
+		$this->db->where('requestID', $id);
+
+		$query = $this->db->get();
+
+		return $query->row_array();
+
+	}
+
+	public function getAllUserCoOwnProperties($user_id){
+
+		$this->db->select('b.price');
+	    
+	    $this->db->from('buytolet_request as a');
+	    
+	    $this->db->where('a.plan', 'co-own');
+	    
+	    $this->db->where('a.userID', $user_id);
+	    
+	    $this->db->or_where('e.receiverID', $user_id);
+	    
+	    $this->db->join('buytolet_beneficiary_details as e', 'e.requestID = a.refID', 'LEFT OUTER');
+	    
+	    $this->db->join('buytolet_property as b', 'b.propertyID = a.propertyID');
+	    
+	    $this->db->join('buytolet_transactions as c', 'c.transaction_id = a.refID', 'INNER');
+	    
+	    $this->db->join('states as d', 'd.id = b.state');
+
+		$this->db->group_by('a.propertyID');
+	    
+	    $query = $this->db->get();
+	    
+	    return $query->result_array();
+
 	}
 	    
 }
