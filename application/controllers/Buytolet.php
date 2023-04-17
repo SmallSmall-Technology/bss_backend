@@ -1343,6 +1343,8 @@ class Buytolet extends CI_Controller {
 
 		$data['apts'] = $this->buytolet_model->getApt();
 
+		$data['locations'] = $this->buytolet_model->get_locations($states);
+
 		if ($config['total_rows'] > 0) {
 
 			$page_number = $this->uri->segment(3);
@@ -3532,12 +3534,11 @@ class Buytolet extends CI_Controller {
 
 			$config['suffix'] = '';
 
-			$data['cities'] = $this->buytolet_model->getCities(2671);
-
-			$data['apts'] = $this->buytolet_model->getApt();
-
 			$data['locations'] = $this->buytolet_model->get_locations($states);
 
+			$data['cities'] = $this->buytolet_model->getCities(2671);
+
+			$data['apts'] = $this->buytolet_model->getApt();	
 
 			if ($config['total_rows'] > 0) {
 
