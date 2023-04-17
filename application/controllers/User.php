@@ -1047,31 +1047,31 @@ class User extends CI_Controller {
 			show_404();
 		}
 
-		if($this->session->has_userdata('userID')){
+		// if($this->session->has_userdata('userID')){
 
-			$data['userID'] = $this->session->userdata('userID');			
+		// 	$data['userID'] = $this->session->userdata('userID');			
 
-			$data['fname'] = $this->session->userdata('fname');			
+		// 	$data['fname'] = $this->session->userdata('fname');			
 
-			$data['lname'] = $this->session->userdata('lname');			
+		// 	$data['lname'] = $this->session->userdata('lname');			
 
-			$data['email'] = $this->session->userdata('email');		
+		// 	$data['email'] = $this->session->userdata('email');		
 
-			$data['refCode'] = $this->session->userdata('referral_code');		
+		// 	$data['refCode'] = $this->session->userdata('referral_code');		
 
-			$data['user_type'] = $this->session->userdata('user_type');		
+		// 	$data['user_type'] = $this->session->userdata('user_type');		
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);	
+		// 	$data['profile'] = $this->buytolet_model->get_user($data['userID']);	
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
+		// 	$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			$data['verification_status'] = $this->session->userdata('verified');
+		// 	$data['verification_status'] = $this->session->userdata('verified');
 
-			$data['giftbags'] = $this->buytolet_model->getGiftbags($data['userID']);
+		// 	$data['giftbags'] = $this->buytolet_model->getGiftbags($data['userID']);
 
-			$data['sent_gifts'] = $this->buytolet_model->getSentGifts($data['userID']);
+		// 	$data['sent_gifts'] = $this->buytolet_model->getSentGifts($data['userID']);
 
-			$data['added_gifts'] = $this->buytolet_model->getAddedGifts($data['userID']);
+		// 	$data['added_gifts'] = $this->buytolet_model->getAddedGifts($data['userID']);
 
 			$data['notifications'] = $this->buytolet_model->notification();
 
@@ -1104,11 +1104,11 @@ class User extends CI_Controller {
 			$this->load->view('user/templates/footer');
 		}
 
-		}else{			
+		// }else{			
 
-			redirect( base_url()."login" ,'refresh');			
+		// 	redirect( base_url()."login" ,'refresh');			
 
-		}
+		// }
 	}
 
 }
