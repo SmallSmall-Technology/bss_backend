@@ -3491,5 +3491,114 @@ class Buytolet extends CI_Controller {
 	}
 
 
+	public function filter_properties()
+	{
+
+		// Filter values from POST data
+		{
+			$slug = '';
+
+			$search_crit['slug'] = $this->input->post('slug');
+
+			$search_crit['list_price'] = $this->input->post('list_price');
+
+			$search_crit['location'] = $this->input->post('location');
+
+			$search_crit['property_type'] = $this->input->post('property_type');
+
+			if ($search_crit['slug'] == 5) {
+
+				$slug = 'co-ownership';
+			} else if ($search_crit['slug'] == 2) {
+
+				$slug = 'buy-to-let';
+			} else {
+
+				$slug = 'buy-to-live';
+			}
+			echo $slug;
+
+			if (@$search_crit['slug'] === null && @$search_crit['list_price'] === null && @$search_crit['location'] === null && @$search_crit['property_type'] === null) {
+
+				$search_crit = $this->session->userdata('filter');
+			} else {
+
+				$this->session->set_userdata('filter', $search_crit);
+			}
+
+			$config['total_rows'] = $this->buytolet_model->getAllSearchCount($search_crit);
+
+			$data['total_count'] = $config['total_rows'];
+
+			$config['suffix'] = '';
+
+			$data['cities'] = $this->buytolet_model->getCities(2671);
+
+			$data['apts'] = $this->buytolet_model->getApt();
+
+			$data['locations'] = $this->buytolet_model->get_locations($states);
+
+
+			if ($config['total_rows'] > 0) {
+
+				$page_number = $this->uri->segment(2);
+
+				$config['base_url'] = base_url() . 'properties-filter';
+
+				$config['uri_segment'] = 2;
+
+				if (empty($page_number))
+
+					$page_number = 1;
+
+				$offset = ($page_number - 1) * $this->pagination->per_page;
+
+				$this->buytolet_model->setPageNumber($this->pagination->per_page);
+
+				$this->buytolet_model->setOffset($offset);
+
+				$this->pagination->cur_page = $page_number;
+
+				$this->pagination->initialize($config);
+
+				$data['page_links'] = $this->pagination->create_links();
+
+				$data['from_row'] = $offset + 1;
+
+				$data['properties'] = $this->buytolet_model->getSearchProperties($search_crit);
+
+				$data['to_row'] = $page_number * count($data['properties']);
+			}
+
+			if ($this->session->has_userdata('loggedIn')) {
+
+				$data['userID'] = $this->session->userdata('userID');
+
+				$data['fname'] = $this->session->userdata('fname');
+
+				$data['lname'] = $this->session->userdata('lname');
+
+				$data['user_type'] = $this->session->userdata('user_type');
+
+				$data['loggedIn'] = $this->session->userdata('loggedIn');
+
+				$data['interest'] = $this->session->userdata('interest');
+			}
+
+			$data['slug'] = $slug;
+
+			//Check login status
+
+			$data['title'] = "Properties :: Buy2Let";
+
+			$this->load->view('templates/header', $data);
+
+			$this->load->view('properties', $data);
+
+			$this->load->view('templates/footer', $data);
+		}
+	}
+
+
 }
 
