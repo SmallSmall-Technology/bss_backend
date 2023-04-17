@@ -3526,7 +3526,7 @@ class Buytolet extends CI_Controller {
 				$this->session->set_userdata('filter', $search_crit);
 			}
 
-			$config['total_rows'] = $this->buytolet_model->getAllSearchCount($search_crit);
+			$config['total_rows'] = $this->buytolet_model->getFilterPropertiesCount($search_crit);
 
 			$data['total_count'] = $config['total_rows'];
 
@@ -3565,7 +3565,7 @@ class Buytolet extends CI_Controller {
 
 				$data['from_row'] = $offset + 1;
 
-				$data['properties'] = $this->buytolet_model->getSearchProperties($search_crit);
+				$data['properties'] = $this->buytolet_model->getFilterProperties($search_crit);
 
 				$data['to_row'] = $page_number * count($data['properties']);
 			}

@@ -1812,4 +1812,185 @@ class Buytolet_model extends CI_Model {
 		return $this->db->insert('buytolet_notification_tbl', $this);			
 	}
 
+	public function getFilterPropertiesCount($search_crit = array()){
+
+		$this->db->select('a.*, b.id, b.type');
+
+		$this->db->from('buytolet_property as a');
+
+		$this->db->where('a.active', 1);
+
+		$this->db->join('apt_type_tbl as b', 'b.id = a.apartment_type', 'LEFT');
+
+		if ($search_crit['slug'] != '') {
+
+			$this->db->where('a.investment_type', $search_crit['slug']);
+		}
+
+		if ($search_crit['list_price'] != '') {
+
+			$selected_price_range = $search_crit['list_price'];
+
+			switch ($selected_price_range) {
+				case '500000':
+					$this->db->where('a.price <', 500000);
+					break;
+				case '1000000':
+					$this->db->where('a.price >=', 500000);
+					$this->db->where('a.price <=', 1000000);
+					break;
+				case '2500000':
+					$this->db->where('a.price >=', 1100000);
+					$this->db->where('a.price <=', 2500000);
+					break;
+				case '5000000':
+					$this->db->where('a.price >=', 2600000);
+					$this->db->where('a.price <=', 5000000);
+					break;
+				case '7500000':
+					$this->db->where('a.price >=', 5100000);
+					$this->db->where('a.price <=', 7500000);
+					break;
+				case '10000000':
+					$this->db->where('a.price >=', 7600000);
+					$this->db->where('a.price <=', 10000000);
+					break;
+				case '15000000':
+					$this->db->where('a.price >=', 10100000);
+					$this->db->where('a.price <=', 15000000);
+					break;
+				case '20000000':
+					$this->db->where('a.price >=', 15100000);
+					$this->db->where('a.price <=', 20000000);
+					break;
+				case '30000000':
+					$this->db->where('a.price >=', 21000000);
+					$this->db->where('a.price <=', 30000000);
+					break;
+				case '40000000':
+					$this->db->where('a.price >=', 31000000);
+					$this->db->where('a.price <=', 40000000);
+					break;
+				case '50000000':
+					$this->db->where('a.price >=', 41000000);
+					$this->db->where('a.price <=', 50000000);
+					break;
+				case '51000000':
+					$this->db->where('a.price >=', 51000000);
+					break;
+				default:
+					// 
+					break;
+			}
+		}
+
+		if ($search_crit['location'] != '') {
+
+			$this->db->where('a.city', $search_crit['location']);
+		}
+
+		if ($search_crit['property_type'] != '') {
+
+			$this->db->where('b.type', $search_crit['property_type']);
+		}
+
+		$this->db->where('a.active', 1);
+
+		return $this->db->count_all_results();
+
+	}
+
+	public function getFilterProperties($search_crit = array()){
+
+		$this->db->select('a.*, b.id, b.type, b.slug, c.id, c.name as propState');
+
+		$this->db->from('buytolet_property as a');
+
+		if ($search_crit['slug'] != '') {
+
+			$this->db->where('a.investment_type', $search_crit['slug']);
+		}
+
+		if ($search_crit['list_price']) {
+			$selected_price_range = $search_crit['list_price'];
+
+			switch ($selected_price_range) {
+				case '500000':
+					$this->db->where('a.price <', 500000);
+					break;
+				case '1000000':
+					$this->db->where('a.price >=', 500000);
+					$this->db->where('a.price <=', 1000000);
+					break;
+				case '2500000':
+					$this->db->where('a.price >=', 1100000);
+					$this->db->where('a.price <=', 2500000);
+					break;
+				case '5000000':
+					$this->db->where('a.price >=', 2600000);
+					$this->db->where('a.price <=', 5000000);
+					break;
+				case '7500000':
+					$this->db->where('a.price >=', 5100000);
+					$this->db->where('a.price <=', 7500000);
+					break;
+				case '10000000':
+					$this->db->where('a.price >=', 7600000);
+					$this->db->where('a.price <=', 10000000);
+					break;
+				case '15000000':
+					$this->db->where('a.price >=', 10100000);
+					$this->db->where('a.price <=', 15000000);
+					break;
+				case '20000000':
+					$this->db->where('a.price >=', 15100000);
+					$this->db->where('a.price <=', 20000000);
+					break;
+				case '30000000':
+					$this->db->where('a.price >=', 21000000);
+					$this->db->where('a.price <=', 30000000);
+					break;
+				case '40000000':
+					$this->db->where('a.price >=', 31000000);
+					$this->db->where('a.price <=', 40000000);
+					break;
+				case '50000000':
+					$this->db->where('a.price >=', 41000000);
+					$this->db->where('a.price <=', 50000000);
+					break;
+				case '51000000':
+					$this->db->where('a.price >=', 51000000);
+					break;
+				default:
+					//
+					break;
+			}
+		}
+
+		if ($search_crit['location'] != '') {
+
+			$this->db->where('a.city', $search_crit['location']);
+		}
+
+		if ($search_crit['property_type'] != '') {
+
+			$this->db->where('b.type', $search_crit['property_type']);
+		}
+
+		$this->db->join('apt_type_tbl as b', 'b.id = a.apartment_type', 'LEFT OUTER');
+
+		$this->db->join('states as c', 'c.id = a.state', 'LEFT');
+
+		$this->db->join('buytolet_investment_type as d', 'd.id = a.investment_type', 'LEFT OUTER');
+
+		$this->db->order_by("a.id", "DESC");
+
+		$this->db->limit($this->_pageNumber, $this->_offset);
+
+		$query = $this->db->get();
+
+		return $query->result_array();
+
+	}
+
 }
