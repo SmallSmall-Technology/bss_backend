@@ -3518,7 +3518,7 @@ class Buytolet extends CI_Controller {
 
 				$slug = 'buy-to-live';
 			}
-			echo $slug;
+			// echo $slug;
 
 			if (@$search_crit['slug'] === null && @$search_crit['list_price'] === null && @$search_crit['location'] === null && @$search_crit['property_type'] === null) {
 
