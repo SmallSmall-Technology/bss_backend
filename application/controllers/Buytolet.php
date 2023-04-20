@@ -1949,10 +1949,21 @@ class Buytolet extends CI_Controller {
 
 				if($user['status'] == 'Active'){
 
+					$date = date('M d, Y h:i:s A');
+
+					$subject = "New Login";
+
 					$userdata = array('userID' => $user['userID'], 'loggedIn' => 'yes', 'fname' => $user['firstName'], 'lname' => $user['lastName'], 'email' => $user['email'], 'verified' => $user['verified'], 'phone' => $user['phone'], 'user_type' => $user['user_type'], 'referral_code' => $user['referral_code'], 'rss_points' => $user['points'], 'interest' => $user['interest']);
 			        //Set session
 			        
 					$this->session->set_userdata($userdata);	
+
+					// Send Notification
+					$message = "We noticed a new sign-in to your account at $date. If you signed in recently, no 
+					need to worry, you can disregards this message.";
+					
+					$this->buytolet_model->insertNotification($subject, $message, $user['userID'], $user['firstName']);
+					
 					
 					echo 1;
 					
@@ -3500,18 +3511,25 @@ class Buytolet extends CI_Controller {
 		{
 			$slug = '';
 
-			$search_crit['slug'] = $this->input->post('slug');
+			// $search_crit['slug'] = $this->input->post('slug');
 
-			$search_crit['list_price'] = $this->input->post('list_price');
+			// $search_crit['list_price'] = $this->input->post('list_price');
 
-			$search_crit['location'] = $this->input->post('location');
+			// $search_crit['location'] = $this->input->post('location');
 
-			$search_crit['property_type'] = $this->input->post('property_type');
+			// $search_crit['property_type'] = $this->input->post('property_type');
 
-			if ($search_crit['slug'] == 5) {
+			$search_crit = [
+				'slug' => $this->input->post('slug'),
+        		'list_price' => $this->input->post('list_price'),
+        		'location' => $this->input->post('location'),
+        		'property_type' => $this->input->post('property_type')
+			];
+
+			if ($search_crit['slug'] == '5') {
 
 				$slug = 'co-ownership';
-			} else if ($search_crit['slug'] == 2) {
+			} else if ($search_crit['slug'] == '2') {
 
 				$slug = 'buy-to-let';
 			} else {
@@ -3519,14 +3537,26 @@ class Buytolet extends CI_Controller {
 				$slug = 'buy-to-live';
 			}
 			// echo $slug;
+			$data['slug'] = $slug;
 
-			if (@$search_crit['slug'] === null && @$search_crit['list_price'] === null && @$search_crit['location'] === null && @$search_crit['property_type'] === null) {
+			// if (@$search_crit['slug'] === null && @$search_crit['list_price'] === null && @$search_crit['location'] === null && @$search_crit['property_type'] === null) {
 
+			// 	$search_crit = $this->session->userdata('filter');
+			// } else {
+
+			// 	$this->session->set_userdata('filter', $search_crit);
+			// }
+
+			if (!isset($search_crit['slug']) && !isset($search_crit['list_price']) && !isset($search_crit['location']) && !isset($search_crit['property_type'])) {
 				$search_crit = $this->session->userdata('filter');
 			} else {
-
 				$this->session->set_userdata('filter', $search_crit);
 			}
+
+			// $session_filter = $this->session->userdata('filter');
+			// if (!empty($session_filter)) {
+			// 	$search_crit = array_merge($search_crit, $session_filter);
+			// }
 
 			$config['total_rows'] = $this->buytolet_model->getFilterPropertiesCount($search_crit);
 
@@ -3534,19 +3564,31 @@ class Buytolet extends CI_Controller {
 
 			$config['suffix'] = '';
 
-			$data['locations'] = $this->buytolet_model->get_locations($states);
+			//  Get Location
+			$data['locations'] = $this->buytolet_model->get_locations($state);
 
-			$data['cities'] = $this->buytolet_model->getCities(2671);
+			// $data['cities'] = $this->buytolet_model->getCities(2671);
 
+			// Get cities
+			if (!empty($search_crit['location'])) {
+				$data['cities'] = $this->buytolet_model->getCities($search_crit['location']);
+			} else {
+				$data['cities'] = array();
+			}
+
+			// Get apartment types
 			$data['apts'] = $this->buytolet_model->getApt();	
 
 			if ($config['total_rows'] > 0) {
-
-				$page_number = $this->uri->segment(2);
-
+				// Pagination settings
+				// $page_number = $this->uri->segment(2);
 				$config['base_url'] = base_url() . 'properties-filter';
 
 				$config['uri_segment'] = 2;
+
+				$config['per_page'] = 10;
+
+				$page_number = $this->uri->segment(2, 1);
 
 				if (empty($page_number))
 
@@ -3586,7 +3628,7 @@ class Buytolet extends CI_Controller {
 				$data['interest'] = $this->session->userdata('interest');
 			}
 
-			$data['slug'] = $slug;
+			// $data['slug'] = $slug;
 
 			//Check login status
 

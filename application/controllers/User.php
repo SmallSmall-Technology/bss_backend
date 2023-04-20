@@ -1073,7 +1073,7 @@ class User extends CI_Controller {
 
 			$data['added_gifts'] = $this->buytolet_model->getAddedGifts($data['userID']);
 
-			$data['notifications'] = $this->buytolet_model->notification();
+			// $data['notifications'] = $this->buytolet_model->notification();
 
 			$data['profile_title'] = "Notification";
 
@@ -1081,7 +1081,10 @@ class User extends CI_Controller {
 
 		if ($this->input->is_ajax_request()) {
 			// Retrieve data for AJAX response
+
 			$notificationCount = $this->buytolet_model->getDailyNotificationsCount();
+
+			$this->session->set_userdata('notification_count', $notificationCount); // Store count in session variable
 
 			$response = ['notificationCount' => $notificationCount];
 
@@ -1093,6 +1096,14 @@ class User extends CI_Controller {
 
 		} else {
 			// Load the view for non-AJAX request
+
+			$data['notifications'] = $this->buytolet_model->notification();
+
+			// Retrieve the notification count from the session variable
+            $notificationCount = $this->session->userdata('notification_count');
+
+            $data['notification_count'] = $notificationCount;
+
 			$this->load->view('user/templates/header', $data);
 
 			$this->load->view('user/templates/verification-bar', $data);

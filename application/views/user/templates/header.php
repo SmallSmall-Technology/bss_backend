@@ -31,7 +31,30 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/footer.css" />
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/index.css" />
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/giftBasket.css" />
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/notification.css" />
+
+  <!--Dashboard Notification Link-->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/notification.css" />
+    <script>
+   // $(document).ready(function() {
+   // Make Ajax request to fetch notifications count and interval set for 10 sec.
+   setInterval(function() {
+     $.ajax({
+       url: '<?php echo base_url('user/notification'); ?>',
+       type: 'json',
+       success: function(response) {
+        //  console.log('Data received:', response);
+         $('.notificationCount').html(response);
+
+         // Retrieve the notification count from the session variable
+         var notificationCount = '<?php echo $this->session->userdata('notification_count'); ?>';
+
+        $('.notificationCount').text(notificationCount);
+       }
+     });
+   }, 1000)
+   // });
+    </script>
+<!-- End Notification -->
 
   <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
   <script src="//run.louassist.com/v2.5.1-m?id=965141804549"></script>

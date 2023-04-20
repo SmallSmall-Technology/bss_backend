@@ -63,7 +63,7 @@
 	</div>
 	<?php //echo $slug; 
 	?>
-
+	<?php $page_links = ''; ?>
 	<?php if (isset($properties) && !empty($properties)) { ?>
 
 		<?php if ($slug != 'co-ownership') { ?>
@@ -193,10 +193,15 @@
 
 		<?php } ?>
 
-	<?php } ?>
-	<div class="pagination">
+		<div class="pagination">
 		<?php echo $page_links; ?>
-	</div>
+		</div>
+
+	<?php }else{ ?>
+
+		<div class="prop-option-below mb:20px">No results matching your search.</div>
+
+	<?php } ?>
 </div>
 <script>
 	function fbShare(url, title, descr, image, winWidth, winHeight) {

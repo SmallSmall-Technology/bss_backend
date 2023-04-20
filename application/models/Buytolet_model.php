@@ -1822,13 +1822,20 @@ class Buytolet_model extends CI_Model {
 
 		$this->db->join('apt_type_tbl as b', 'b.id = a.apartment_type', 'LEFT');
 
-		if ($search_crit['slug'] != '') {
+		// if ($search_crit['slug'] != '') {
 
+		// 	$this->db->where('a.investment_type', $search_crit['slug']);
+		// }
+
+		if (!empty($search_crit['slug']) && is_string($search_crit['slug'])) {
 			$this->db->where('a.investment_type', $search_crit['slug']);
 		}
 
-		if ($search_crit['list_price'] != '') {
+		// if ($search_crit['list_price'] != '') {
 
+		// 	$selected_price_range = $search_crit['list_price'];
+
+		if (!empty($search_crit['list_price']) && is_numeric($search_crit['list_price'])) {
 			$selected_price_range = $search_crit['list_price'];
 
 			switch ($selected_price_range) {
@@ -1884,17 +1891,25 @@ class Buytolet_model extends CI_Model {
 			}
 		}
 
-		if ($search_crit['location'] != '') {
+		// if ($search_crit['location'] != '') {
 
+		// 	$this->db->where('a.city', $search_crit['location']);
+		// }
+
+		if (!empty($search_crit['location']) && is_string($search_crit['location'])) {
 			$this->db->where('a.city', $search_crit['location']);
 		}
 
-		if ($search_crit['property_type'] != '') {
+		// if ($search_crit['property_type'] != '') {
 
+		// 	$this->db->where('b.type', $search_crit['property_type']);
+		// }
+
+		if (!empty($search_crit['property_type']) && is_string($search_crit['property_type'])) {
 			$this->db->where('b.type', $search_crit['property_type']);
 		}
 
-		$this->db->where('a.active', 1);
+		// $this->db->where('a.active', 1);
 
 		return $this->db->count_all_results();
 
@@ -1911,7 +1926,9 @@ class Buytolet_model extends CI_Model {
 			$this->db->where('a.investment_type', $search_crit['slug']);
 		}
 
-		if ($search_crit['list_price']) {
+		// if ($search_crit['list_price']) {
+		// 	$selected_price_range = $search_crit['list_price'];
+		if (!empty($search_crit['list_price']) && is_numeric($search_crit['list_price'])) {
 			$selected_price_range = $search_crit['list_price'];
 
 			switch ($selected_price_range) {

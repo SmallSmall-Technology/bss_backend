@@ -119,22 +119,6 @@
 
  </main>
 
- <script>
-   // $(document).ready(function() {
-   // Make Ajax request to fetch notifications count and interval set for 3 sec.
-   setInterval(function() {
-     $.ajax({
-       url: '<?php echo base_url('user/notification'); ?>',
-       type: 'json',
-       success: function(response) {
-         console.log('Data received:', response);
-         $('.notificationCount').html(response);
-       }
-     });
-   }, 1000)
-   // });
- </script>
-
  </body>
 
  </html>
