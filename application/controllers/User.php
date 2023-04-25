@@ -1013,7 +1013,7 @@ class User extends CI_Controller
 
 			$data['added_gifts'] = $this->buytolet_model->getAddedGifts($data['userID']);
 
-		// $data['notifications'] = $this->buytolet_model->notification($data['userID']);
+		$data['notifications'] = $this->buytolet_model->notification($data['userID']);
 
 		$data['profile_title'] = "Notification";
 

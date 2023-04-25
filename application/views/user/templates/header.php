@@ -51,7 +51,7 @@
         $('.notificationCount').text(notificationCount);
        }
      });
-   }, 1000)
+   }, 10500)
    // });
     </script>
 <!-- End Notification -->
