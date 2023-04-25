@@ -1,52 +1,53 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class User extends CI_Controller
+{
 
-	 public function __construct() {		
+	public function __construct()
+	{
 
-	   	parent::__construct(); 
+		parent::__construct();
 
-		Header('Access-Control-Allow-Origin: *'); 
-
+		Header('Access-Control-Allow-Origin: *');
 	}
 
-	
 
-	public function dashboard(){    
 
-		if ( ! file_exists(APPPATH.'views/user/dashboard.php')){
+	public function dashboard()
+	{
 
-            // Whoops, we don't have a page for that!
+		if (!file_exists(APPPATH . 'views/user/dashboard.php')) {
 
-            show_404();
+			// Whoops, we don't have a page for that!
 
-        }
+			show_404();
+		}
 
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
-			$data['userID'] = $this->session->userdata('userID');	
+			$data['userID'] = $this->session->userdata('userID');
 
-			$data['fname'] = $this->session->userdata('fname');	
+			$data['fname'] = $this->session->userdata('fname');
 
-			$data['lname'] = $this->session->userdata('lname');	
+			$data['lname'] = $this->session->userdata('lname');
 
-			$data['email'] = $this->session->userdata('email');	
+			$data['email'] = $this->session->userdata('email');
 
 			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');				
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);			
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);			
+			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			$data['verification_status'] = $this->session->userdata('verified');			
+			$data['verification_status'] = $this->session->userdata('verified');
 
-			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']); 			
+			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']);
 
-			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);			
+			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);
 
 			$data['bss_inspection_count'] = $this->buytolet_model->count_bss_inspections($data['userID']);
 
@@ -58,9 +59,9 @@ class User extends CI_Controller {
 
 			$data['buy_to_live'] = $this->buytolet_model->getUserProperties($data['userID'], 1);
 
-			$data['owner'] = $this->buytolet_model->get_owned_property($data['userID']);			
+			$data['owner'] = $this->buytolet_model->get_owned_property($data['userID']);
 
-			$data['gift_basket'] = $this->buytolet_model->getGiftBasketTotal($data['userID']);			
+			$data['gift_basket'] = $this->buytolet_model->getGiftBasketTotal($data['userID']);
 
 			$data['profile_title'] = "Dashboard";
 
@@ -68,113 +69,108 @@ class User extends CI_Controller {
 
 			$this->load->view('user/templates/header', $data);
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
-			$this->load->view('user/dashboard', $data);			
+			$this->load->view('user/dashboard', $data);
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');		
+			$this->load->view('user/templates/footer');
+		} else {
 
-		}else{			
-
-			redirect( base_url()."login" ,'refresh');
-
+			redirect(base_url() . "login", 'refresh');
 		}
-
 	}
 
-	
 
-	public function property_portfolio(){
 
-    
-
-		if ( ! file_exists(APPPATH.'views/user/dashboard.php')){
+	public function property_portfolio()
+	{
 
 
 
-            // Whoops, we don't have a page for that!
-
-            show_404();
+		if (!file_exists(APPPATH . 'views/user/dashboard.php')) {
 
 
 
-        }
+			// Whoops, we don't have a page for that!
+
+			show_404();
+		}
 
 
 
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
 
 
-			$data['userID'] = $this->session->userdata('userID');			
+			$data['userID'] = $this->session->userdata('userID');
 
 
 
-			$data['fname'] = $this->session->userdata('fname');			
+			$data['fname'] = $this->session->userdata('fname');
 
 
 
-			$data['lname'] = $this->session->userdata('lname');			
+			$data['lname'] = $this->session->userdata('lname');
 
 
 
-			$data['email'] = $this->session->userdata('email');		
+			$data['email'] = $this->session->userdata('email');
 
 
 
-			$data['refCode'] = $this->session->userdata('referral_code');		
+			$data['refCode'] = $this->session->userdata('referral_code');
 
 
 
-			$data['user_type'] = $this->session->userdata('user_type');		
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);	
 
-			
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
+
+
 
 			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			
+
 
 			$data['verification_status'] = $this->session->userdata('verified');
 
-			
 
-			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']); 
 
-			
+			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']);
+
+
 
 			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);
 
-			
+
 
 			$data['co_own_units'] = $this->buytolet_model->co_own_units($data['userID']);
 
-			
+
 
 			$data['bss_inspection_count'] = $this->buytolet_model->count_bss_inspections($data['userID']);
 
-			
+
 
 			$data['co_own_total'] = $this->buytolet_model->getUserSharesTotal($data['userID']);
 
-			
+
 
 			$data['buy_to_let'] = $this->buytolet_model->getUserProperties($data['userID'], 2);
 
-			
+
 
 			//$data['finance_value'] = $this->buytolet_model->getSumOfMarketValue(@$data['recent_financing']['propertyID']);
 
-			
+
 
 			$data['buy_to_live'] = $this->buytolet_model->getUserProperties($data['userID'], 1);
 
-			
+
 
 			$data['gifts'] = $this->buytolet_model->get_gifts($data['userID']);
 
@@ -192,119 +188,108 @@ class User extends CI_Controller {
 
 
 
-            $this->load->view('user/templates/property-portfolio-submenu', $data);
+			$this->load->view('user/templates/property-portfolio-submenu', $data);
 
 
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
 
 
 			$this->load->view('user/property-portfolio', $data);
 
-			
+
 
 			$this->load->view('user/templates/js-files', $data);
 
 
 
-			$this->load->view('user/templates/footer');		
+			$this->load->view('user/templates/footer');
+		} else {
 
 
 
-		}else{			
+			redirect(base_url() . "login", 'refresh');
+		}
+	}
 
 
 
-			redirect( base_url()."login" ,'refresh');			
+	public function co_ownership_property($id)
+	{
 
 
 
+		if (!file_exists(APPPATH . 'views/user/co-ownership-property.php')) {
+
+
+
+			// Whoops, we don't have a page for that!
+
+			show_404();
 		}
 
 
 
-	}
-
-	
-
-	public function co_ownership_property($id){
-
-    
-
-		if ( ! file_exists(APPPATH.'views/user/co-ownership-property.php')){
+		if ($this->session->has_userdata('userID')) {
 
 
 
-            // Whoops, we don't have a page for that!
-
-            show_404();
+			$data['userID'] = $this->session->userdata('userID');
 
 
 
-        }
+			$data['fname'] = $this->session->userdata('fname');
 
 
 
-		if($this->session->has_userdata('userID')){
+			$data['lname'] = $this->session->userdata('lname');
 
 
 
-			$data['userID'] = $this->session->userdata('userID');			
+			$data['email'] = $this->session->userdata('email');
 
 
 
-			$data['fname'] = $this->session->userdata('fname');			
+			$data['refCode'] = $this->session->userdata('referral_code');
 
 
 
-			$data['lname'] = $this->session->userdata('lname');			
+			$data['user_type'] = $this->session->userdata('user_type');
 
 
 
-			$data['email'] = $this->session->userdata('email');		
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
 
-
-			$data['refCode'] = $this->session->userdata('referral_code');		
-
-
-
-			$data['user_type'] = $this->session->userdata('user_type');		
-
-			
-
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);	
-
-			
 
 			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			
+
 
 			$data['verification_status'] = $this->session->userdata('verified');
 
-			
 
-			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']); 
 
-			
+			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']);
+
+
 
 			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);
 
-			
+
 
 			$data['bss_inspection_count'] = $this->buytolet_model->count_bss_inspections($data['userID']);
 
-			
+
 
 			$data['gifts'] = $this->buytolet_model->get_gifts($data['userID']);
 
-			
+
 
 			$data['co_details'] = $this->buytolet_model->get_co_own_property($id);
 
-			
+
 
 			$data['all_co_own_properties'] = $this->buytolet_model->get_all_co_own_properties($data['userID']);
 
@@ -322,119 +307,108 @@ class User extends CI_Controller {
 
 
 
-            $this->load->view('user/templates/property-portfolio-submenu', $data);
+			$this->load->view('user/templates/property-portfolio-submenu', $data);
 
 
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
 
 
 			$this->load->view('user/co-ownership-property', $data);
 
-			
+
 
 			$this->load->view('user/templates/js-files', $data);
 
 
 
-			$this->load->view('user/templates/footer');		
+			$this->load->view('user/templates/footer');
+		} else {
 
 
 
-		}else{			
+			redirect(base_url() . "login", 'refresh');
+		}
+	}
 
 
 
-			redirect( base_url()."login" ,'refresh');			
+	public function co_ownership()
+	{
 
 
 
+		if (!file_exists(APPPATH . 'views/user/co-ownership.php')) {
+
+
+
+			// Whoops, we don't have a page for that!
+
+			show_404();
 		}
 
 
 
-	}
-
-	
-
-	public function co_ownership(){
-
-    
-
-		if ( ! file_exists(APPPATH.'views/user/co-ownership.php')){
+		if ($this->session->has_userdata('userID')) {
 
 
 
-            // Whoops, we don't have a page for that!
-
-            show_404();
+			$data['userID'] = $this->session->userdata('userID');
 
 
 
-        }
+			$data['fname'] = $this->session->userdata('fname');
 
 
 
-		if($this->session->has_userdata('userID')){
+			$data['lname'] = $this->session->userdata('lname');
 
 
 
-			$data['userID'] = $this->session->userdata('userID');			
+			$data['email'] = $this->session->userdata('email');
 
 
 
-			$data['fname'] = $this->session->userdata('fname');			
+			$data['refCode'] = $this->session->userdata('referral_code');
 
 
 
-			$data['lname'] = $this->session->userdata('lname');			
+			$data['user_type'] = $this->session->userdata('user_type');
 
 
 
-			$data['email'] = $this->session->userdata('email');		
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
 
-
-			$data['refCode'] = $this->session->userdata('referral_code');		
-
-
-
-			$data['user_type'] = $this->session->userdata('user_type');		
-
-			
-
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);	
-
-			
 
 			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			
+
 
 			$data['verification_status'] = $this->session->userdata('verified');
 
-			
 
-			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']); 
 
-			
+			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']);
+
+
 
 			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);
 
-			
+
 
 			$data['bss_inspection_count'] = $this->buytolet_model->count_bss_inspections($data['userID']);
 
-			
+
 
 			$data['gifts'] = $this->buytolet_model->getAllUsersGifts($data['userID']);
 
-			
+
 
 			$data['all_co_own_properties'] = $this->buytolet_model->get_all_co_own_properties($data['userID']);
 
-			
+
 
 
 
@@ -450,71 +424,68 @@ class User extends CI_Controller {
 
 
 
-            $this->load->view('user/templates/property-portfolio-submenu', $data);
+			$this->load->view('user/templates/property-portfolio-submenu', $data);
 
 
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
 
 
 			$this->load->view('user/co-ownership', $data);
 
-			
+
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');	
+			$this->load->view('user/templates/footer');
+		} else {
 
-		}else{			
-
-			redirect( base_url()."login" ,'refresh');
-
+			redirect(base_url() . "login", 'refresh');
 		}
-
 	}
 
-	
 
-	public function bss_financing(){    
 
-		if ( ! file_exists(APPPATH.'views/user/bss-financing.php')){
+	public function bss_financing()
+	{
 
-            // Whoops, we don't have a page for that!
+		if (!file_exists(APPPATH . 'views/user/bss-financing.php')) {
 
-            show_404();
+			// Whoops, we don't have a page for that!
 
-        }
+			show_404();
+		}
 
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
 			$data['userID'] = $this->session->userdata('userID');
 
-			$data['fname'] = $this->session->userdata('fname');	
+			$data['fname'] = $this->session->userdata('fname');
 
-			$data['lname'] = $this->session->userdata('lname');	
+			$data['lname'] = $this->session->userdata('lname');
 
-			$data['email'] = $this->session->userdata('email');	
+			$data['email'] = $this->session->userdata('email');
 
-			$data['refCode'] = $this->session->userdata('referral_code');		
+			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');					
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);				
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);			
+			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			$data['verification_status'] = $this->session->userdata('verified');			
+			$data['verification_status'] = $this->session->userdata('verified');
 
-			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']); 			
+			$data['balance'] = $this->buytolet_model->get_wallet_balance($data['userID']);
 
-			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);			
+			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);
 
-			$data['bss_inspection_count'] = $this->buytolet_model->count_bss_inspections($data['userID']);			
+			$data['bss_inspection_count'] = $this->buytolet_model->count_bss_inspections($data['userID']);
 
-			$data['gifts'] = $this->buytolet_model->get_gifts($data['userID']);			
+			$data['gifts'] = $this->buytolet_model->get_gifts($data['userID']);
 
-			$data['bss_finance_property'] = $this->buytolet_model->get_finance_property();			
+			$data['bss_finance_property'] = $this->buytolet_model->get_finance_property();
 
 			$data['finance_properties'] = $this->buytolet_model->get_all_finance_properties($data['userID']);
 
@@ -524,53 +495,50 @@ class User extends CI_Controller {
 
 			$this->load->view('user/templates/header', $data);
 
-            $this->load->view('user/templates/property-portfolio-submenu', $data);
+			$this->load->view('user/templates/property-portfolio-submenu', $data);
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
 			$this->load->view('user/bss-financing', $data);
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');	
+			$this->load->view('user/templates/footer');
+		} else {
 
-		}else{			
-
-			redirect( base_url()."login" ,'refresh');	
-
+			redirect(base_url() . "login", 'refresh');
 		}
-
 	}
 
-	
 
-	public function profile(){    
 
-		if ( ! file_exists(APPPATH.'views/user/profile.php')){
+	public function profile()
+	{
 
-            // Whoops, we don't have a page for that!
+		if (!file_exists(APPPATH . 'views/user/profile.php')) {
 
-            show_404();
+			// Whoops, we don't have a page for that!
 
-        }
+			show_404();
+		}
 
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
 			$data['userID'] = $this->session->userdata('userID');
 
-			$data['fname'] = $this->session->userdata('fname');	
+			$data['fname'] = $this->session->userdata('fname');
 
-			$data['lname'] = $this->session->userdata('lname');	
+			$data['lname'] = $this->session->userdata('lname');
 
-			$data['email'] = $this->session->userdata('email');	
+			$data['email'] = $this->session->userdata('email');
 
-			$data['refCode'] = $this->session->userdata('referral_code');	
+			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');				
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);			
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);			
+			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
 			$data['verification_status'] = $this->session->userdata('verified');
 
@@ -580,51 +548,48 @@ class User extends CI_Controller {
 
 			$this->load->view('user/templates/header', $data);
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
-			$this->load->view('user/profile', $data);			
+			$this->load->view('user/profile', $data);
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');		
+			$this->load->view('user/templates/footer');
+		} else {
 
-		}else{	
-
-			redirect( base_url()."login" ,'refresh');
-
+			redirect(base_url() . "login", 'refresh');
 		}
-
 	}
 
-	
 
-	public function referral(){    
 
-		if ( ! file_exists(APPPATH.'views/user/referral.php')){
+	public function referral()
+	{
 
-            // Whoops, we don't have a page for that!
+		if (!file_exists(APPPATH . 'views/user/referral.php')) {
 
-            show_404();
+			// Whoops, we don't have a page for that!
 
-        }
+			show_404();
+		}
 
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
 			$data['userID'] = $this->session->userdata('userID');
 
-			$data['fname'] = $this->session->userdata('fname');	
+			$data['fname'] = $this->session->userdata('fname');
 
-			$data['lname'] = $this->session->userdata('lname');	
+			$data['lname'] = $this->session->userdata('lname');
 
-			$data['email'] = $this->session->userdata('email');	
+			$data['email'] = $this->session->userdata('email');
 
 			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');				
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);				
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);			
+			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
 			$data['verification_status'] = $this->session->userdata('verified');
 
@@ -634,59 +599,56 @@ class User extends CI_Controller {
 
 			$this->load->view('user/templates/header', $data);
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
-			$this->load->view('user/referral', $data);			
+			$this->load->view('user/referral', $data);
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');	
+			$this->load->view('user/templates/footer');
+		} else {
 
-		}else{		
-
-			redirect( base_url()."login" ,'refresh');
-
+			redirect(base_url() . "login", 'refresh');
 		}
-
 	}
 
-	
 
-	public function wallet(){    
 
-		if ( ! file_exists(APPPATH.'views/user/wallet.php')){
+	public function wallet()
+	{
 
-            // Whoops, we don't have a page for that!
+		if (!file_exists(APPPATH . 'views/user/wallet.php')) {
 
-            show_404();
+			// Whoops, we don't have a page for that!
 
-        }
+			show_404();
+		}
 
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
 			$data['userID'] = $this->session->userdata('userID');
 
-			$data['fname'] = $this->session->userdata('fname');	
+			$data['fname'] = $this->session->userdata('fname');
 
-			$data['lname'] = $this->session->userdata('lname');	
+			$data['lname'] = $this->session->userdata('lname');
 
-			$data['email'] = $this->session->userdata('email');		
+			$data['email'] = $this->session->userdata('email');
 
-			$data['refCode'] = $this->session->userdata('referral_code');	
+			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');				
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);				
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);			
+			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			$data['verification_status'] = $this->session->userdata('verified');			
+			$data['verification_status'] = $this->session->userdata('verified');
 
-			$data['wallet'] = $this->buytolet_model->get_wallet_details($data['userID']); 			
+			$data['wallet'] = $this->buytolet_model->get_wallet_details($data['userID']);
 
-			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);			
+			$data['bss_request_count'] = $this->buytolet_model->count_user_requests($data['userID']);
 
-			$data['bss_inspection_count'] = $this->buytolet_model->count_bss_inspections($data['userID']);			
+			$data['bss_inspection_count'] = $this->buytolet_model->count_bss_inspections($data['userID']);
 
 			$data['gifts'] = $this->buytolet_model->get_gifts($data['userID']);
 
@@ -694,57 +656,54 @@ class User extends CI_Controller {
 
 			$data['title'] = "Wallet";
 
-			$this->load->view('user/templates/header', $data);			
+			$this->load->view('user/templates/header', $data);
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
-			$this->load->view('user/wallet', $data);			
+			$this->load->view('user/wallet', $data);
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');		
+			$this->load->view('user/templates/footer');
+		} else {
 
-		}else{
+			redirect(base_url() . "login", 'refresh');
+		}
+	}
 
-			redirect( base_url()."login" ,'refresh');			
+	public function send_gift()
+	{
 
+		if (!file_exists(APPPATH . 'views/user/send-gift.php')) {
+
+			// Whoops, we don't have a page for that!
+
+			show_404();
 		}
 
-	}	
+		if ($this->session->has_userdata('userID')) {
 
-	public function send_gift(){
+			$data['userID'] = $this->session->userdata('userID');
 
-		if ( ! file_exists(APPPATH.'views/user/send-gift.php')){
+			$data['fname'] = $this->session->userdata('fname');
 
-            // Whoops, we don't have a page for that!
+			$data['lname'] = $this->session->userdata('lname');
 
-            show_404();
-
-        }
-
-		if($this->session->has_userdata('userID')){
-
-			$data['userID'] = $this->session->userdata('userID');	
-
-			$data['fname'] = $this->session->userdata('fname');			
-
-			$data['lname'] = $this->session->userdata('lname');	
-
-			$data['email'] = $this->session->userdata('email');	
+			$data['email'] = $this->session->userdata('email');
 
 			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');				
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);			
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);			
+			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			$data['verification_status'] = $this->session->userdata('verified');			
+			$data['verification_status'] = $this->session->userdata('verified');
 
-			$data['giftbags'] = $this->buytolet_model->getGiftbags($data['userID']);			
+			$data['giftbags'] = $this->buytolet_model->getGiftbags($data['userID']);
 
-			$data['sent_gifts'] = $this->buytolet_model->getSentGifts($data['userID']);			
+			$data['sent_gifts'] = $this->buytolet_model->getSentGifts($data['userID']);
 
 			$data['added_gifts'] = $this->buytolet_model->getAddedGifts($data['userID']);
 
@@ -752,56 +711,53 @@ class User extends CI_Controller {
 
 			$data['title'] = "Send Gift";
 
-			$this->load->view('user/templates/header', $data);			
+			$this->load->view('user/templates/header', $data);
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
-			$this->load->view('user/send-gift', $data);		
+			$this->load->view('user/send-gift', $data);
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');		
-
-		}else{			
-			redirect( base_url()."login" ,'refresh');	
-
+			$this->load->view('user/templates/footer');
+		} else {
+			redirect(base_url() . "login", 'refresh');
 		}
-
 	}
 
-	public function payments(){    
+	public function payments()
+	{
 
-		if ( ! file_exists(APPPATH.'views/user/payments.php')){
+		if (!file_exists(APPPATH . 'views/user/payments.php')) {
 
-            // Whoops, we don't have a page for that!
+			// Whoops, we don't have a page for that!
 
-            show_404();
+			show_404();
+		}
 
-        }
-
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
 			$data['userID'] = $this->session->userdata('userID');
 
-			$data['fname'] = $this->session->userdata('fname');	
+			$data['fname'] = $this->session->userdata('fname');
 
-			$data['lname'] = $this->session->userdata('lname');	
+			$data['lname'] = $this->session->userdata('lname');
 
-			$data['email'] = $this->session->userdata('email');	
+			$data['email'] = $this->session->userdata('email');
 
-			$data['refCode'] = $this->session->userdata('referral_code');		
+			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');					
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);				
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);			
+			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			$data['verification_status'] = $this->session->userdata('verified');			
+			$data['verification_status'] = $this->session->userdata('verified');
 
-			$data['wallet'] = $this->buytolet_model->get_wallet_details($data['userID']); 			
+			$data['wallet'] = $this->buytolet_model->get_wallet_details($data['userID']);
 
-			$data['transactions'] = $this->buytolet_model->get_all_transactions($data['userID']);			
+			$data['transactions'] = $this->buytolet_model->get_all_transactions($data['userID']);
 
 			$data['profile_title'] = "Payments";
 
@@ -809,57 +765,54 @@ class User extends CI_Controller {
 
 			$this->load->view('user/templates/header', $data);
 
-            $this->load->view('user/templates/property-portfolio-submenu', $data);
+			$this->load->view('user/templates/property-portfolio-submenu', $data);
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
-			$this->load->view('user/payments', $data);			
+			$this->load->view('user/payments', $data);
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');		
+			$this->load->view('user/templates/footer');
+		} else {
 
-		}else{			
+			redirect(base_url() . "login", 'refresh');
+		}
+	}
 
-			redirect( base_url()."login" ,'refresh');			
+	public function gift_basket()
+	{
 
+		if (!file_exists(APPPATH . 'views/user/payments.php')) {
+
+			// Whoops, we don't have a page for that!
+
+			show_404();
 		}
 
-	}	
-
-	public function gift_basket(){    
-
-		if ( ! file_exists(APPPATH.'views/user/payments.php')){
-
-            // Whoops, we don't have a page for that!
-
-            show_404();
-
-        }
-
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
 			$data['userID'] = $this->session->userdata('userID');
 
-			$data['fname'] = $this->session->userdata('fname');	
+			$data['fname'] = $this->session->userdata('fname');
 
-			$data['lname'] = $this->session->userdata('lname');	
+			$data['lname'] = $this->session->userdata('lname');
 
-			$data['email'] = $this->session->userdata('email');	
+			$data['email'] = $this->session->userdata('email');
 
-			$data['refCode'] = $this->session->userdata('referral_code');	
+			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');				
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);			
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
-			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);			
+			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
-			$data['verification_status'] = $this->session->userdata('verified');			
+			$data['verification_status'] = $this->session->userdata('verified');
 
-			$data['wallet'] = $this->buytolet_model->get_wallet_details($data['userID']);			
+			$data['wallet'] = $this->buytolet_model->get_wallet_details($data['userID']);
 
-			$data['transactions'] = $this->buytolet_model->get_all_transactions($data['userID']);			
+			$data['transactions'] = $this->buytolet_model->get_all_transactions($data['userID']);
 
 			$data['profile_title'] = "Payments";
 
@@ -867,105 +820,96 @@ class User extends CI_Controller {
 
 			$this->load->view('user/templates/header', $data);
 
-            $this->load->view('user/templates/property-portfolio-submenu', $data);
+			$this->load->view('user/templates/property-portfolio-submenu', $data);
 
-            $this->load->view('user/templates/verification-bar', $data);
+			$this->load->view('user/templates/verification-bar', $data);
 
-			$this->load->view('user/gift-basket', $data);			
+			$this->load->view('user/gift-basket', $data);
 
 			$this->load->view('user/templates/js-files', $data);
 
-			$this->load->view('user/templates/footer');	
+			$this->load->view('user/templates/footer');
+		} else {
 
-		}else{			
-
-			redirect( base_url()."login" ,'refresh');
-
+			redirect(base_url() . "login", 'refresh');
 		}
-
-	}	
+	}
 
 	public function send_to_gift_basket()
 	{
-		$gifted = $this->input->post('gift_amount');		
+		$gifted = $this->input->post('gift_amount');
 
-		$owned_share = $this->input->post('user_shares');		
+		$owned_share = $this->input->post('user_shares');
 
-		$request_id = $this->input->post('request_id');		
+		$request_id = $this->input->post('request_id');
 
 		$property_id = $this->input->post('property_id');
 
-		if(!$this->buytolet_model->check_request_shares_condition($request_id)['share_condition']){	
+		if (!$this->buytolet_model->check_request_shares_condition($request_id)['share_condition']) {
 
-			$remaining_shares = $owned_share - $gifted;		
+			$remaining_shares = $owned_share - $gifted;
 
-			$user_id = $this->session->userdata('userID');		
+			$user_id = $this->session->userdata('userID');
 
 			$result = $this->buytolet_model->gift_basket_deposit($gifted, $request_id, $user_id, $property_id);
 
-			if($result){
+			if ($result) {
 				//Update request table
 				$res = $this->buytolet_model->update_request($user_id, $remaining_shares);
 
-				echo 1;		    
+				echo 1;
+			} else {
 
-			}else{		    
-
-				echo 0;		    
-
+				echo 0;
 			}
-
-		}else{
+		} else {
 
 			echo 0;
-
 		}
+	}
 
-	}	
+	public function send_user_gift()
+	{
 
-	public function send_user_gift(){	    
+		$result = "error";
 
-	    $result = "error";	    
+		$msg = "";
 
-	    $msg = "";	    
+		$data['userID'] = $this->session->userdata('userID');
 
-	    $data['userID'] = $this->session->userdata('userID');	    
+		$requestID = $this->input->post('requestID');
 
-	    $requestID = $this->input->post('requestID');	    
+		$noOfShares = $this->input->post('noOfShares');
 
-	    $noOfShares = $this->input->post('noOfShares');	    
+		$sharesAdded = $this->buytolet_model->getAddedGiftsByRequestID($requestID);
 
-	    $sharesAdded = $this->buytolet_model->getAddedGiftsByRequestID($requestID);	    
+		$sharesSpent = $this->buytolet_model->getSpentGiftsByRequestID($requestID);
 
-	    $sharesSpent = $this->buytolet_model->getSpentGiftsByRequestID($requestID);	    
+		$sharesAvailable = $sharesAdded['shares'] - $sharesSpent['shares_spent'];
 
-	    $sharesAvailable = $sharesAdded['shares'] - $sharesSpent['shares_spent'];	    
+		if ($sharesAvailable < $noOfShares) {
 
-	    if($sharesAvailable < $noOfShares){	        
+			$msg = "Insufficient shares available";
+		} else {
 
-	        $msg = "Insufficient shares available";	        
+			//Proceed with sending gift to user
 
-	    }else{	        
+			$data = $this->input->post();
 
-	        //Proceed with sending gift to user
+			$user = $this->buytolet_model->check_email($data['email']);
 
-	        $data = $this->input->post();
+			$user_id = '';
 
-	        $user = $this->buytolet_model->check_email($data['email']);                        
+			if ($user) {
 
-            $user_id = '';            
+				//Get user ID
 
-            if($user){
+				$user_id = $this->buytolet_model->get_user_by_email($data['email'])['userID'];
+			} else {
 
-                //Get user ID
+				//Generate new ID
 
-                $user_id = $this->buytolet_model->get_user_by_email($data['email'])['userID'];
-
-            }else{
-
-                //Generate new ID
-
-                $user_id = $this->generate_user_id(12);
+				$user_id = $this->generate_user_id(12);
 
 				$details['userID'] =  $user_id;
 
@@ -981,60 +925,56 @@ class User extends CI_Controller {
 
 				$res = $this->create_user_account($details);
 
-				if($res){
+				if ($res) {
 
 					//send a new user actionable message
 
 				}
-            }
+			}
 
-	        //$result = $this->buytolet_model->sendGift($data);	        
+			//$result = $this->buytolet_model->sendGift($data);	        
 
-	        if($this->buytolet_model->insert_beneficiary_details($data['userID'], $data['requestID'], $data['firstName'], $data['lastName'], $data['email'], $data['phone'], $data['noOfShares'], '0', $user_id)){	            
+			if ($this->buytolet_model->insert_beneficiary_details($data['userID'], $data['requestID'], $data['firstName'], $data['lastName'], $data['email'], $data['phone'], $data['noOfShares'], '0', $user_id)) {
 
-	            $request = $this->buytolet_model->getRequest($ref_id);	            
+				$request = $this->buytolet_model->getRequest($ref_id);
 
-	            //Populate spent shares table
+				//Populate spent shares table
 
-	            if($this->buytolet_model->insertSpentShares($data['userID'], $data['noOfShares'], $data['requestID'], $user_id, $request['propertyID'])){	                
+				if ($this->buytolet_model->insertSpentShares($data['userID'], $data['noOfShares'], $data['requestID'], $user_id, $request['propertyID'])) {
 
-	                $result = "success";	                
+					$result = "success";
 
-	                $msg = "Successfully updated";
+					$msg = "Successfully updated";
+				}
+			}
 
-	            }
+			//Send certificate to user
 
-	        }        
+		}
 
-	        //Send certificate to user
+		echo json_encode(array("result" => $result, "msg" => $msg));
+	}
 
-	    }	    
+	public function generate_user_id($number)
+	{
 
-	    echo json_encode(array("result" => $result, "msg" => $msg));	    
+		$digits = $number;
 
-	}	
-
-	public function generate_user_id($number){	    
-
-	    $digits = $number;	    
-
-		$randomNumber = '';		
+		$randomNumber = '';
 
 		$count = 0;
 
-		while($count < $digits){
+		while ($count < $digits) {
 
 			$randomDigit = mt_rand(0, 9);
 
 			$randomNumber .= $randomDigit;
 
 			$count++;
-
-		}		
+		}
 
 		return $randomNumber;
-
-	}	
+	}
 
 	// User Notification 
 
@@ -1047,21 +987,21 @@ class User extends CI_Controller {
 			show_404();
 		}
 
-		if($this->session->has_userdata('userID')){
+		if ($this->session->has_userdata('userID')) {
 
-			$data['userID'] = $this->session->userdata('userID');			
+			$data['userID'] = $this->session->userdata('userID');
 
-			$data['fname'] = $this->session->userdata('fname');			
+			$data['fname'] = $this->session->userdata('fname');
 
-			$data['lname'] = $this->session->userdata('lname');			
+			$data['lname'] = $this->session->userdata('lname');
 
-			$data['email'] = $this->session->userdata('email');		
+			$data['email'] = $this->session->userdata('email');
 
-			$data['refCode'] = $this->session->userdata('referral_code');		
+			$data['refCode'] = $this->session->userdata('referral_code');
 
-			$data['user_type'] = $this->session->userdata('user_type');		
+			$data['user_type'] = $this->session->userdata('user_type');
 
-			$data['profile'] = $this->buytolet_model->get_user($data['userID']);	
+			$data['profile'] = $this->buytolet_model->get_user($data['userID']);
 
 			$data['profile_pic'] = $this->buytolet_model->get_user_pic($data['userID']);
 
@@ -1073,16 +1013,16 @@ class User extends CI_Controller {
 
 			$data['added_gifts'] = $this->buytolet_model->getAddedGifts($data['userID']);
 
-			// $data['notifications'] = $this->buytolet_model->notification();
+		// $data['notifications'] = $this->buytolet_model->notification($data['userID']);
 
-			$data['profile_title'] = "Notification";
+		$data['profile_title'] = "Notification";
 
-			$data['title'] = "Notification";
+		$data['title'] = "Notification";
 
 		if ($this->input->is_ajax_request()) {
 			// Retrieve data for AJAX response
 
-			$notificationCount = $this->buytolet_model->getDailyNotificationsCount();
+			$notificationCount = $this->buytolet_model->getDailyNotificationsCount($data['userID']);
 
 			$this->session->set_userdata('notification_count', $notificationCount); // Store count in session variable
 
@@ -1093,16 +1033,15 @@ class User extends CI_Controller {
 			// Remove double quotes around values
 			// echo $notificationCountResponse = '(' . str_replace('"', '', $notificationResponse) . ')';
 			echo $notificationCountResponse = str_replace('"', '', $notificationResponse);
-
 		} else {
 			// Load the view for non-AJAX request
 
-			$data['notifications'] = $this->buytolet_model->notification();
+			$data['notifications'] = $this->buytolet_model->notification($data['userID']);
 
 			// Retrieve the notification count from the session variable
-            $notificationCount = $this->session->userdata('notification_count');
+			$notificationCount = $this->session->userdata('notification_count');
 
-            $data['notification_count'] = $notificationCount;
+			$data['notification_count'] = $notificationCount;
 
 			$this->load->view('user/templates/header', $data);
 
@@ -1114,13 +1053,19 @@ class User extends CI_Controller {
 
 			$this->load->view('user/templates/footer');
 		}
+		} else {
 
-		}else{			
-
-			redirect( base_url()."login" ,'refresh');			
-
+			redirect(base_url() . "login", 'refresh');
 		}
 	}
 
-}
+	public function mark_as_read()
+	{
+		$notificationID = $this->input->post('notification_id');
 
+		$this->buytolet_model->markNotificationAsRead($notificationID);
+
+		echo $notificationID; // Return a response to the AJAX call
+
+	}
+}
