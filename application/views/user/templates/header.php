@@ -37,7 +37,7 @@
     <script>
    // $(document).ready(function() {
    // Make Ajax request to fetch notifications count and interval set for 10 sec.
-   setInterval(function() {
+  //  setInterval(function() {
      $.ajax({
        url: '<?php echo base_url('user/notification'); ?>',
        type: 'json',
@@ -51,7 +51,7 @@
         $('.notificationCount').text(notificationCount);
        }
      });
-   }, 10500)
+  //  }, 10500)
    // });
     </script>
 <!-- End Notification -->
