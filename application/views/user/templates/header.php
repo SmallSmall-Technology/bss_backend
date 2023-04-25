@@ -6,6 +6,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Favicon link -->
+  <link rel="icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/user-assets/images/bss-favicon.png">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/bootstrap-css/bootstrap.min.css" crossorigin="anonymous" />
 
@@ -28,9 +31,33 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/footer.css" />
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/index.css" />
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/giftBasket.css" />
+
+  <!--Dashboard Notification Link-->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user-assets/css/custom-css/notification.css" />
+    <script>
+   // $(document).ready(function() {
+   // Make Ajax request to fetch notifications count and interval set for 10 sec.
+   setInterval(function() {
+     $.ajax({
+       url: '<?php echo base_url('user/notification'); ?>',
+       type: 'json',
+       success: function(response) {
+        //  console.log('Data received:', response);
+         $('.notificationCount').html(response);
+
+         // Retrieve the notification count from the session variable
+         var notificationCount = '<?php echo $this->session->userdata('notification_count'); ?>';
+
+        $('.notificationCount').text(notificationCount);
+       }
+     });
+   }, 1000)
+   // });
+    </script>
+<!-- End Notification -->
+
   <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
   <script src="//run.louassist.com/v2.5.1-m?id=965141804549"></script>
- 
 
   <title><?php echo $title; ?></title>
 </head>
@@ -79,7 +106,7 @@
           <li class="nav-item d-flex align-items-center">
             <a class="nav-link p-0" href="#" tabindex="-1" aria-disabled="true">
               <div class="menu-logo mr-2">
-                <img class="img-fluid" src="assets/images/portfolio.svg" alt="">
+                <img class="img-fluid" src="<?php echo base_url(); ?>assets/user-assets/images/portfolio.svg" alt="">
               </div>
             </a>
           </li>
@@ -114,14 +141,15 @@
           </li>
           <li class="nav-item d-flex align-items-center">
             <a class="nav-link p-0" href="#" tabindex="-1" aria-disabled="true">
-              <div class="menu-logo mr-2">
+              <div class="menu-logo mr-2 position-relative">
+                <div class="notification-circle d-md-flex d-none justify-content-center align-items-center notificationCount"></div>
                 <img class="img-fluid" src="<?php echo base_url(); ?>assets/user-assets/images/inbox-icon.svg" alt="">
               </div>
             </a>
           </li>
-          <li class="nav-item d-flex align-items-center mr-4 <?php echo ($profile_title == 'Messages')? 'dashboard-active' : '' ; ?>">
+          <li class="nav-item d-flex align-items-center mr-4 <?php echo ($profile_title == 'Notification')? 'dashboard-active' : '' ; ?>">
             <div class="menu-text">
-              <a href="<?php echo base_url('user/messages'); ?>" class=" text-dark" style="text-decoration: none;">inbox</a>
+              <a href="<?php echo base_url('user/notification'); ?>" class=" text-dark" style="text-decoration: none;">Notification</a>
             </div>
           </li>
           <li class="nav-item d-flex align-items-center">
@@ -243,9 +271,9 @@
 
         <div class="mb-5 pl-2">
           <p>
-            <a href="<?php echo base_url('user/messages'); ?>" class=" text-dark" style="text-decoration: none;">
+            <a href="<?php echo base_url('user/notification'); ?>" class=" text-dark" style="text-decoration: none;">
               <img class="img-fluid" src="<?php echo base_url(); ?>assets/user-assets/images/inbox-icon.svg" alt="">
-              &nbsp;&nbsp; Inbox
+              &nbsp;&nbsp; Notification
             </a>
           </p>
         </div>
@@ -267,7 +295,6 @@
             </a>
           </p>
         </div>
-
 
       </div>
     </nav>

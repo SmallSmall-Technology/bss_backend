@@ -29,6 +29,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/tooltip.css?version=<?php echo rand(99, 999999999); ?>">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/toggle-switch.css?version=<?php echo rand(99, 99999999); ?>" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/number-field.css?version=<?php echo rand(99, 999999999); ?>">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/properties.css?version=<?php echo rand(99, 999999999); ?>">
 	<script src="<?php echo base_url(); ?>assets/js/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
 	
 </head>

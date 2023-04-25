@@ -97,10 +97,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 
 */
+// Properties filter
+
+$route['properties-filter/(:any)'] = 'buytolet/filter_properties/$1';
+
+$route['properties-filter'] = 'buytolet/filter_properties';
 
 $route['test/check-worth'] = 'buytolet/getPropertyWorth';
 
 $route['test/shares-certificate'] = 'buytolet/shares_certificate';
+
+$route['user/notification'] = 'user/notification';
 
 $route['user/send-gift'] = 'user/send_gift';
 

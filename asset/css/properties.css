@@ -1,0 +1,358 @@
+.properties-select {
+    position: relative;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #282828;
+    width: 289px;
+    margin: 0px 0;
+    margin-left: 0px;
+    border: 1px solid #DDDDDD;
+    border-radius: 7px;
+    margin-bottom: 10px;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+  
+    .select-items div,
+    .select-selected {
+      color: #000;
+      border-bottom: 1px solid #000;
+    }
+  
+    .select-items {
+  
+      background-color: lightblue;
+  
+    }
+  
+    .select-selected:after {
+      border-color: #000 transparent transparent transparent;
+    }
+  
+  
+  }
+  
+  
+  
+  .header-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 600px;
+  
+  }
+  
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+  
+  .right-section {
+    border-radius: 20px 0 0 20px;
+  }
+  
+  .header-wrapper .right-section {
+    height: 100% !important;
+  }
+  
+  .left-section {
+    /* padding-top: 30px; */
+  }
+  
+  h1 {
+    font-size: 35px;
+    font-family: 'Cera Pro';
+  }
+  
+  .product-card-container {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  
+
+
+  .form-properties {
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  
+  .properties-select .arrow-down {
+    position: relative;
+    padding-right: 15px;
+    /* Add padding to the right of the option for the arrow icon */
+  }
+  
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  
+  .properties-select .arrow {
+    position: relative;
+    top: 0%;
+    right: 5px;
+    /* Adjust the positioning of the arrow icon as needed */
+    transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .properties-select {
+    position: relative;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #282828;
+    width: 289px;
+    margin: 0px 0;
+    margin-left: 0px;
+    border: 1px solid #DDDDDD;
+    border-radius: 7px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .properties-select select {
+    display: none;
+    /*hide original SELECT element:*/
+  }
+  
+  .select-selected {
+    background-color: transparent;
+  
+  }
+
+  .properties-button {
+    display: inline-block;
+    width: 200px;
+    background: #64318A;
+    color: #fff;
+    position: relative;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 35px;
+    border-radius: 7px;
+    color: #FFFFFF
+  }
+  
+  /*style the arrow inside the select element:*/
+  .properties-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #000 transparent transparent transparent;
+  }
+  
+ 
+  
+  @media screen and (min-width:515px) {
+    .grid-box-3 {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      width: 98%;
+      padding: 10px;
+    }
+  }
+  
+  @media screen and (min-width:1024px) {
+    .grid-box-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media screen and (min-width:1280px) {
+    .grid-box-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4rem;
+      width: 85%;
+    }
+  }
+  
+  @media screen and (min-width:768px) {
+  
+    .header-wrapper {
+      grid-template-columns: 1fr 1fr;
+      flex-direction: column;
+      height: 600px;
+      margin-bottom: 100px;
+    }
+  
+    .left-section {
+      padding-top: 70px;
+    }
+  
+    .left-section h1 {
+      font-family: 'Cera Pro';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 70px;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+    }
+  
+    .left-section>p {
+      padding: 0 90px;
+      font-family: 'Cera Pro';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 23px;
+    }
+  
+    .link-section {
+      flex-direction: row;
+    }
+  
+    .form-section {
+      padding: 0px 40px;
+  
+    }
+  
+    .search-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      background: #64318A;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      gap: 1rem;
+      margin-left: 20px;
+      margin-top: 40px;
+      cursor: pointer;
+    }
+  
+    .get-started,
+    .see-faqs {
+      padding: 15px 40px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Cera Pro';
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header-wrapper .right-section {
+      height: 0 !important;
+    }
+  
+    h1 {
+      font-size: 22px;
+      line-height: 35px;
+    }
+  
+    .left-section {
+      padding-top: 0px;
+      background: #fff;
+  
+    }
+  
+    .form-section {
+      padding: 0px;
+      margin-left: 0px;
+      margin-top: 40px;
+  
+    }
+  
+    .product-card-container {
+      width: 85%;
+      flex-direction: column;
+    }
+  
+    .product-card {
+      width: 100%;
+      height: 530px;
+      margin: 10px 0 20px 0;
+      border-radius: 10px;
+    }
+  
+    .partner-logo-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin: 50px 0;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  
+    .partner-logo-item {
+      width: 200px;
+      padding: 0;
+      margin-right: 20px;
+    }
+  
+    .partner-logo-item:last-child {
+      margin-right: 0;
+    }
+  
+    .text-slider {
+      width: 100%;
+    }
+  
+    .left-section .text-slider ul li>p {
+      padding: 0 20px;
+      font-size: 15px;
+      line-height: 23px;
+    }
+  
+    .partner-wrapper {
+      margin: 50px 0;
+    }
+  
+    .large-txt-result {
+      font-size: 25px;
+    }
+  
+    .small-txt-result {
+      font-size: 16px;
+    }
+  
+    .result-container {
+      width: 95%;
+      margin: 30px auto 200px auto;
+    }
+  
+    .home-faq-btn {
+      width: 200px;
+      line-height: 40px;
+    }
+  
+    .home-faq-btn a {
+      font-size: 14px;
+    }
+  }
